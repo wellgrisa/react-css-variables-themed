@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": true,
+    "outDir": "lib",
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test*", "src/stories"]
+}
