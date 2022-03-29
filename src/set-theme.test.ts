@@ -6,7 +6,7 @@ import { setTheme } from './set-theme'
 jest.mock('./create-theme-color-hsl.ts')
 
 describe('set-theme', () => {
-  it('sets the properties in document using the proper hue, saturation and lightness', () => {
+  it('crates theme colors for each variable given', () => {
     const mockGetHueSaturationAndLightness = jest.fn()
 
     const mockedFirstVariableName = faker.random.alpha()
