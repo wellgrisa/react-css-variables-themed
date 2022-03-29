@@ -1,14 +1,12 @@
+import { GetHueSaturationAndLightnessType, ThemeAttribute } from './models'
+
 const setDocumentProperty = ({ name, value }) => document.documentElement.style.setProperty(`--${name}`, value)
 
-export interface ThemeColorCreation<TVariableName> extends ThemeAttribute<TVariableName> {
+export interface ThemeColorCreation extends ThemeAttribute {
   getHueSaturationAndLightness: GetHueSaturationAndLightnessType
 }
 
-export const createThemeColorHSL = <TVariableName>({
-  name,
-  value,
-  getHueSaturationAndLightness,
-}: ThemeColorCreation<TVariableName>) => {
+export const createThemeColorHSL = ({ name, value, getHueSaturationAndLightness }: ThemeColorCreation) => {
   const { hue, saturation, lightness } = getHueSaturationAndLightness(value)
 
   setDocumentProperty({ name: `${name}-h`, value: hue })
@@ -17,24 +15,3 @@ export const createThemeColorHSL = <TVariableName>({
 }
 
 export const getDocumentBodyVariableByName = (name) => getComputedStyle(document.body).getPropertyValue(`--${name}`)
-
-export interface ThemeAttribute<TVariableName> {
-  name: TVariableName
-  value: string
-}
-
-export type GetHueSaturationAndLightnessType = (value: string) => {
-  hue: number
-  saturation: number
-  lightness: number
-}
-
-export interface Theme<TVariableName> {
-  variables: ThemeAttribute<TVariableName>[]
-  getHueSaturationAndLightness: GetHueSaturationAndLightnessType
-}
-
-export const setTheme = <TVariableName>({ variables, getHueSaturationAndLightness }: Partial<Theme<TVariableName>>) =>
-  variables.forEach(({ name, value }) => {
-    createThemeColorHSL({ name, value, getHueSaturationAndLightness: getHueSaturationAndLightness })
-  })
