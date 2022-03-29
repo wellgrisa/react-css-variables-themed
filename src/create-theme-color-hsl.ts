@@ -4,7 +4,7 @@ export interface ThemeColorCreation<TVariableName> extends ThemeAttribute<TVaria
   getHueSaturationAndLightness: GetHueSaturationAndLightnessType
 }
 
-export const createThemeAttribute = <TVariableName>({
+export const createThemeColorHSL = <TVariableName>({
   name,
   value,
   getHueSaturationAndLightness,
@@ -36,5 +36,5 @@ export interface Theme<TVariableName> {
 
 export const setTheme = <TVariableName>({ variables, getHueSaturationAndLightness }: Partial<Theme<TVariableName>>) =>
   variables.forEach(({ name, value }) => {
-    createThemeAttribute({ name, value, getHueSaturationAndLightness: getHueSaturationAndLightness })
+    createThemeColorHSL({ name, value, getHueSaturationAndLightness: getHueSaturationAndLightness })
   })
