@@ -3,10 +3,11 @@
 
 $mocked-color-name: 'mocked-name';
 $mocked-color-value: #fff;
-$mocked-default-hover: 0.5;
 
 @include describe('create-theme-color-hsl()') {
   @include it('creates a theme variable for hue, saturation, lightness and hover') {
+    $mocked-default-hover: 0.5;
+
     @include assert {
       @include output {
         :root {
@@ -33,5 +34,28 @@ $mocked-default-hover: 0.5;
         }
       }
     }
+  }
+
+  @include it('changes alpha for the color name given') {
+    $mocked-alpha-opacity: 0.7;
+
+    @include assert-equal(
+      alpha($mocked-color-name, $mocked-alpha-opacity),
+      hsla(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        var(#{$mocked-color-name}-l),
+        $mocked-alpha-opacity
+      )
+    );
+  }
+
+  @include it('changes lightness for the color name given') {
+    $mocked-lightness: 10%;
+
+    @include assert-equal(
+      change-lightness($mocked-color-name, $mocked-lightness),
+      hsl(var(#{$mocked-color-name}-h), var(#{$mocked-color-name}-s), calc(var(mocked-name-l) + 10%))
+    );
   }
 }
