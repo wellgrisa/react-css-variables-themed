@@ -1,0 +1,20 @@
+@mixin create-theme-color($color-name, $color-value, $hover: 0.5) {
+  #{$color-name}-h: hue($color-value);
+  #{$color-name}-s: saturation($color-value);
+  #{$color-name}-l: lightness($color-value);
+  #{$color-name}: hsl(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), calc(var(#{$color-name + '-l'})));
+  #{$color-name}-hover: hsla(
+    var(#{$color-name + '-h'}),
+    var(#{$color-name + '-s'}),
+    var(#{$color-name + '-l'}),
+    $hover
+  );
+}
+
+@function alpha($color-name, $opacity) {
+  @return hsla(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), var(#{$color-name + '-l'}), $opacity);
+}
+
+@function change-lightness($color-name, $lightness) {
+  @return hsl(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), calc(var(#{$color-name + '-l'}) + #{$lightness}));
+}
