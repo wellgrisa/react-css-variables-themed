@@ -11,7 +11,7 @@
   );
 }
 
-@function alpha($color-name, $opacity) {
+@function change-alpha($color-name, $opacity) {
   @return hsla(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), var(#{$color-name + '-l'}), $opacity);
 }
 

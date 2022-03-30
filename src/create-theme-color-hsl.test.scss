@@ -40,7 +40,7 @@ $mocked-color-value: #fff;
     $mocked-alpha-opacity: 0.7;
 
     @include assert-equal(
-      alpha($mocked-color-name, $mocked-alpha-opacity),
+      change-alpha($mocked-color-name, $mocked-alpha-opacity),
       hsla(
         var(#{$mocked-color-name}-h),
         var(#{$mocked-color-name}-s),
