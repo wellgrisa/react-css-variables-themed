@@ -1,0 +1,25 @@
+@import './lib/create-theme-color-hsl.scss';
+
+:root {
+  @include create-theme-color(--background-color, #eee);
+  @include create-theme-color(--background-contrast-color, #6495ed);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--background-contrast-color);
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+  h1 {
+    color: var(--background-contrast-color);
+
+    &:hover {
+      color: var(--background-contrast-color-hover);
+      cursor: pointer;
+    }
+  }
+}
