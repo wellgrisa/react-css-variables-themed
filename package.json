@@ -4,6 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
   "scripts": {
     "build": "yarn clean && tsc",
     "clean": "rm -rf lib",
