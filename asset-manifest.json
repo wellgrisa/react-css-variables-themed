@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/wellgrisa/react-theme-css-variable/static/css/main.9e42f68f.css",
-    "main.js": "/wellgrisa/react-theme-css-variable/static/js/main.13ce30af.js",
-    "static/js/787.56c75451.chunk.js": "/wellgrisa/react-theme-css-variable/static/js/787.56c75451.chunk.js",
-    "index.html": "/wellgrisa/react-theme-css-variable/index.html",
-    "main.9e42f68f.css.map": "/wellgrisa/react-theme-css-variable/static/css/main.9e42f68f.css.map",
-    "main.13ce30af.js.map": "/wellgrisa/react-theme-css-variable/static/js/main.13ce30af.js.map",
-    "787.56c75451.chunk.js.map": "/wellgrisa/react-theme-css-variable/static/js/787.56c75451.chunk.js.map"
+    "main.css": "/react-css-variables-themed/static/css/main.9e42f68f.css",
+    "main.js": "/react-css-variables-themed/static/js/main.813bfe32.js",
+    "static/js/787.56c75451.chunk.js": "/react-css-variables-themed/static/js/787.56c75451.chunk.js",
+    "index.html": "/react-css-variables-themed/index.html",
+    "main.9e42f68f.css.map": "/react-css-variables-themed/static/css/main.9e42f68f.css.map",
+    "main.813bfe32.js.map": "/react-css-variables-themed/static/js/main.813bfe32.js.map",
+    "787.56c75451.chunk.js.map": "/react-css-variables-themed/static/js/787.56c75451.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9e42f68f.css",
-    "static/js/main.13ce30af.js"
+    "static/js/main.813bfe32.js"
   ]
 }
