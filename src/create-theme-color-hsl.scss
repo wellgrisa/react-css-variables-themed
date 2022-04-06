@@ -1,8 +1,28 @@
+@mixin create-theme-color-harmony($color-name, $color-value, $hover: 0.5, $color-harmony) {
+  @include create-theme-color($color-name, $color-value, $hover);
+
+  @if $color-harmony == 'complementary' {
+    $complementary-factor: 180;
+
+    #{$color-name}-complementary: hsl(
+      calc(var(#{$color-name + '-h'}) + #{$complementary-factor}deg),
+      var(#{$color-name + '-s'}),
+      calc(var(#{$color-name + '-l'}))
+    );
+  }
+}
+
+$color-harmonies: (
+  'complementary': 180,
+  'triadic': 120,
+  'analogous': 30,
+);
+
 @mixin create-theme-color($color-name, $color-value, $hover: 0.5) {
   #{$color-name}-h: hue($color-value);
   #{$color-name}-s: saturation($color-value);
   #{$color-name}-l: lightness($color-value);
-  #{$color-name}: hsl(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), calc(var(#{$color-name + '-l'})));
+  #{$color-name}: hsl(var(#{$color-name + '-h'}), var(#{$color-name + '-s'}), var(#{$color-name + '-l'}));
   #{$color-name}-hover: hsla(
     var(#{$color-name + '-h'}),
     var(#{$color-name + '-s'}),
