@@ -1,4 +1,4 @@
-@import './react-theme-css-variable/create-theme-color-hsl.scss';
+@import "~tame-your-theme-scss";
 
 $grey-50: #fafafa;
 $grey-60: #a0a0a0;
@@ -22,7 +22,10 @@ $grey-A700: #616161;
   @include create-theme-color(--background-contrast-color, $grey-900);
   @include create-theme-color(--primary-color, #f6a820);
 
-  @include create-theme-color-complimentary(--complimentary-primary-color, #00ffff);
+  @include create-theme-color-complimentary(
+    --complimentary-primary-color,
+    #00ffff
+  );
 }
 
 %theme-presenter-container {
@@ -81,7 +84,7 @@ body {
     border: 1px solid change-lightness(--background-contrast-color, 60%);
   }
 
-  [data-theme='complimentary-theme'] {
+  [data-theme="complimentary-theme"] {
     @include create-theme-color-complimentary(--primary-color, #00ffff);
     @include create-theme-color-complimentary(--background-color, #708090);
 
@@ -101,7 +104,7 @@ body {
     }
   }
 
-  [data-theme='theme-by-hue'] {
+  [data-theme="theme-by-hue"] {
     @include create-theme-by-hue(257);
 
     @extend %theme-presenter-container;
@@ -119,7 +122,7 @@ body {
     }
   }
 
-  [data-theme='triadic-theme'] {
+  [data-theme="triadic-theme"] {
     @include create-theme-color-triadic(--primary-color, #00ffff);
     @include create-theme-color-complimentary(--background-color, #708090);
 

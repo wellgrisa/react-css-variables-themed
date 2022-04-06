@@ -1,9 +1,2 @@
-.DS_Store
-/node_modules
-/coverage
-/build
-.eslintcache
-yarn-debug.log*
-yarn-error.log*
-.vscode
-lib
+node_modules
+node_modules

@@ -3,51 +3,72 @@ import './app.scss'
 import hexToHsl from 'hex-to-hsl'
 import { useEffect, useState } from 'react'
 import { Column, Row } from 'react-display-flex'
+import { setTheme } from 'tame-your-theme'
 
-import { setTheme } from './react-theme-css-variable/set-theme'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 
 const getHueSaturationAndLightness = (value: string) => {
-  const [hue, saturation, lightness] = hexToHsl(value)
+  const [hue, saturation, lightness] = hexToHsl(value);
 
   return {
     hue,
     saturation,
     lightness,
-  }
-}
+  };
+};
 
 export default function App() {
-  const [currentTheme, setCurrentTheme] = useState(whiteTheme)
+  const [currentTheme, setCurrentTheme] = useState(whiteTheme);
 
   useEffect(() => {
     setTheme({
       variables: currentTheme,
       getHueSaturationAndLightness,
-    })
-  }, [currentTheme])
+    });
+  }, [currentTheme]);
 
   const onRadioChange = (event) => {
-    setCurrentTheme(themes[event.target.value])
-  }
+    setCurrentTheme(themes[event.target.value]);
+  };
 
   return (
     <Column element="section" className="App">
       <Row className="radio-group" alignItemsCenter justifyContentCenter>
         <label>
-          <input type="radio" defaultChecked onChange={onRadioChange} value={ThemesHarmonies.White} name="theme" />
+          <input
+            type="radio"
+            defaultChecked
+            onChange={onRadioChange}
+            value={ThemesHarmonies.White}
+            name="theme"
+          />
           White
         </label>
         <label>
-          <input type="radio" onChange={onRadioChange} value={ThemesHarmonies.Dark} name="theme" />
+          <input
+            type="radio"
+            onChange={onRadioChange}
+            value={ThemesHarmonies.Dark}
+            name="theme"
+          />
           Dark
         </label>
         <label>
-          <input type="radio" onChange={onRadioChange} value={ThemesHarmonies.Complimentary} name="theme" />
+          <input
+            type="radio"
+            onChange={onRadioChange}
+            value={ThemesHarmonies.Complimentary}
+            name="theme"
+          />
           Complimentary
         </label>
         <label>
-          <input type="radio" onChange={onRadioChange} value={ThemesHarmonies.Triadic} name="theme" />
+          <input
+            type="radio"
+            onChange={onRadioChange}
+            value={ThemesHarmonies.Triadic}
+            name="theme"
+          />
           Triadic
         </label>
       </Row>
@@ -76,5 +97,5 @@ export default function App() {
         <h3>--hue</h3>
       </div> */}
     </Column>
-  )
+  );
 }
