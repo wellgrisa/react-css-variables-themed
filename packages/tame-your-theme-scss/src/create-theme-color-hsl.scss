@@ -10,7 +10,7 @@ $default-hover: 0.5;
   $complimentary-factor: 180;
 
   #{$color-name}-complimentary: hsl(
-    calc(var(#{$color-name + "-h"}) + $complimentary-factor),
+    calc(var(#{$color-name + "-h"}) - $complimentary-factor),
     var(#{$color-name + "-s"}),
     calc(var(#{$color-name + "-l"}))
   );

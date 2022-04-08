@@ -21,11 +21,13 @@ $grey-A700: #616161;
 :root {
   @include create-theme-color(--black-text-color, #24292f);
   @include create-theme-color(--markdown-keyword, #ff00ff);
+  @include create-theme-color(--markdown-comment, #228b22);
   @include create-theme-color(--h3-title, #ff4500);
   @include create-theme-color(--markdown-string, #d2691e);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
-  @include create-theme-color(--primary-color, #f6a820);
+  @include create-theme-color-complimentary(--primary-color, #f6a820);
+  @include create-theme-color-triadic(--primary-color-triadic, #f6a820);
 
   @include create-theme-color-complimentary(
     --complimentary-primary-color,
@@ -65,8 +67,13 @@ body {
     }
 
     .hljs-string,
-    .hljs-selector-pseudo {
+    .hljs-selector-pseudo,
+    .hljs-selector-tag {
       color: var(--markdown-string);
+    }
+
+    .hljs-comment {
+      color: var(--markdown-comment);
     }
 
     h3 {
@@ -148,6 +155,30 @@ body {
       }
       &:nth-child(5) {
         color: darken-theme-color(--primary-color, 30%);
+      }
+    }
+  }
+
+  .color-harmonies-markdown {
+    h4 {
+      &:nth-of-type(1) {
+        color: var(--primary-color);
+      }
+
+      &:nth-of-type(2) {
+        color: var(--primary-color-complimentary);
+      }
+
+      &:nth-of-type(3) {
+        color: var(--primary-color-triadic);
+      }
+
+      &:nth-of-type(4) {
+        color: var(--primary-color-triadic-triadic-first-hue);
+      }
+
+      &:nth-of-type(5) {
+        color: var(--primary-color-triadic-triadic-second-hue);
       }
     }
   }

@@ -1,6 +1,5 @@
-import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import rehypeHighlight from 'rehype-highlight'
+import { darkenLightenMarkdown } from './markdown/darken-lighten-markdown'
+import { Markdown } from './markdown/Markdown'
 
 const initialValue = `
 ## Overview
@@ -83,44 +82,73 @@ h3 {
 \`\`\`
 `;
 
-const darkenLightenMarkdown = `
-### @function darken
+export const colorHarmoniesMarkdown = `
+### @function create-theme-color-complimentary
 
-This function makes the given color darker 
+This function creates the color given and also a complimentary one to it.
 
-* Lighter
-* Light
-* Normal
-* Dark
-* Darker
-
-This is common to use when making light borders in boxes for example.
+#### var(--primary-color)
+#### var(--primary-color-complimentary)
 
 \`\`\`scss
 @import "~tame-your-theme-scss";
 
-h3 {
-  // $color-name: --h3-title, $opacity: 0.1
-  border-bottom: 1px solid change-alpha(--h3-title, 0.1);
+:root {
+  @include create-theme-color-complimentary(--primary-color, #f6a820);
+}
+
+h4 {
+  &:nth-of-type(1) {
+    color: var(--primary-color);
+  }
+
+  &:nth-of-type(2) {
+    color: var(--primary-color-complimentary);
+  }
+}
+\`\`\`
+
+### @function create-theme-color-triadic
+
+This function creates the color given and two other colors, color-triadic-first-hue and color-triadic-second-hue
+
+#### var(--primary-color)
+#### var(--primary-color-triadic-first-hue)
+#### var(--primary-color-triadic-second-hue)
+
+\`\`\`scss
+@import "~tame-your-theme-scss";
+
+:root {
+  @include create-theme-color-triadic(--primary-color-triadic, #f6a820);
+}
+
+h4 {
+  &:nth-of-type(1) {
+    color: var(--primary-color-triadic);
+  }
+
+  &:nth-of-type(2) {
+    color: var(--primary-color-triadic-triadic-first-hue);
+  }
+
+  &:nth-of-type(3) {
+    color: var(--primary-color-triadic-triadic--second-hue);
+  }
 }
 \`\`\`
 `;
 
-export const Markdown = ({ children }) => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{children}</ReactMarkdown>
-);
-
 export const DarkenLightenMarkdown = () => (
-  <ReactMarkdown
-    rehypePlugins={[rehypeHighlight]}
-    className="darken-lighten-markdown"
-  >
+  <Markdown className="darken-lighten-markdown">
     {darkenLightenMarkdown}
-  </ReactMarkdown>
+  </Markdown>
 );
 
-export const Hello = () => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-    {initialValue}
-  </ReactMarkdown>
+export const ColorHarmoniesMarkdown = () => (
+  <Markdown className="color-harmonies-markdown">
+    {colorHarmoniesMarkdown}
+  </Markdown>
 );
+
+export const Hello = () => <Markdown>{initialValue}</Markdown>;
