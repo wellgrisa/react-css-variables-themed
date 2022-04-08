@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import rehypeHighlight from 'rehype-highlight'
 
 const initialValue = `
 ## Overview
@@ -106,13 +107,20 @@ h3 {
 `;
 
 export const Markdown = ({ children }) => (
-  <ReactMarkdown>{children}</ReactMarkdown>
+  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{children}</ReactMarkdown>
 );
 
 export const DarkenLightenMarkdown = () => (
-  <ReactMarkdown className="darken-lighten-markdown">
+  <ReactMarkdown
+    rehypePlugins={[rehypeHighlight]}
+    className="darken-lighten-markdown"
+  >
     {darkenLightenMarkdown}
   </ReactMarkdown>
 );
 
-export const Hello = () => <ReactMarkdown>{initialValue}</ReactMarkdown>;
+export const Hello = () => (
+  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+    {initialValue}
+  </ReactMarkdown>
+);
