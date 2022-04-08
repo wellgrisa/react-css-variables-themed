@@ -105,6 +105,20 @@ body {
     }
   }
 
+  .sticky {
+    position: sticky;
+    top: 0;
+    background: var(--background-color);
+    padding-top: $small;
+    padding-bottom: $normal;
+    margin-bottom: $large;
+    border-bottom: 1px solid lighten-theme-color(--background-color, 20%);
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
   .theme-radio-group {
     cursor: pointer;
     accent-color: var(--primary-color);
@@ -113,6 +127,28 @@ body {
 
     input {
       margin-right: $tiny;
+    }
+  }
+
+  .darken-lighten-markdown {
+    li {
+      font-size: 150%;
+
+      &:nth-child(1) {
+        color: lighten-theme-color(--primary-color, 30%);
+      }
+      &:nth-child(2) {
+        color: lighten-theme-color(--primary-color, 15%);
+      }
+      &:nth-child(3) {
+        color: var(--primary-color);
+      }
+      &:nth-child(4) {
+        color: darken-theme-color(--primary-color, 15%);
+      }
+      &:nth-child(5) {
+        color: darken-theme-color(--primary-color, 30%);
+      }
     }
   }
 }

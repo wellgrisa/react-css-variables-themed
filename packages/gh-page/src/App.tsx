@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { Row } from 'react-display-flex'
 import { setTheme } from 'tame-your-theme'
 
-import { Hello, Markdown } from './Hello'
+import { DarkenLightenMarkdown, Hello, Markdown } from './Hello'
 // import { Hello } from './Hello'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 
@@ -36,48 +36,56 @@ export default function App() {
 
   return (
     <div className="markdown-body">
-      <Markdown># A demo of `tame-your-theme`</Markdown>
-      <Row className="theme-radio-group" alignItemsCenter justifyContentCenter>
-        <label>
-          <input
-            type="radio"
-            defaultChecked
-            onChange={onRadioChange}
-            value={ThemesHarmonies.White}
-            name="theme"
-          />
-          White
-        </label>
-        <label>
-          <input
-            type="radio"
-            onChange={onRadioChange}
-            value={ThemesHarmonies.Dark}
-            name="theme"
-          />
-          Dark
-        </label>
-        <label>
-          <input
-            type="radio"
-            onChange={onRadioChange}
-            value={ThemesHarmonies.Complimentary}
-            name="theme"
-          />
-          Complimentary
-        </label>
-        <label>
-          <input
-            type="radio"
-            onChange={onRadioChange}
-            value={ThemesHarmonies.Triadic}
-            name="theme"
-          />
-          Triadic
-        </label>
-      </Row>
+      <div className="sticky">
+        <Markdown># A demo of `tame-your-theme`</Markdown>
+        <Row
+          className="theme-radio-group"
+          alignItemsCenter
+          justifyContentCenter
+        >
+          <label>
+            <input
+              type="radio"
+              defaultChecked
+              onChange={onRadioChange}
+              value={ThemesHarmonies.White}
+              name="theme"
+            />
+            White
+          </label>
+          <label>
+            <input
+              type="radio"
+              onChange={onRadioChange}
+              value={ThemesHarmonies.Dark}
+              name="theme"
+            />
+            Dark
+          </label>
+          <label>
+            <input
+              type="radio"
+              onChange={onRadioChange}
+              value={ThemesHarmonies.Complimentary}
+              name="theme"
+            />
+            Complimentary
+          </label>
+          <label>
+            <input
+              type="radio"
+              onChange={onRadioChange}
+              value={ThemesHarmonies.Triadic}
+              name="theme"
+            />
+            Triadic
+          </label>
+        </Row>
+      </div>
 
       <Hello />
+
+      <DarkenLightenMarkdown />
 
       {/* <h1>Primary Color Outside of Specific Themes</h1>
       <div data-theme="complimentary-theme">

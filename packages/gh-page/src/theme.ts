@@ -50,10 +50,6 @@ const complimentaryTheme = [
     name: "primary-color",
     value: "#90EE90",
   },
-  {
-    name: "complimentary-primary-color",
-    value: "#00ffff",
-  },
 ];
 
 export const themes: { [key in ThemesHarmonies]: ThemeAttribute[] } = {

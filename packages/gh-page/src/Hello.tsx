@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import rehypeHighlight from 'rehype-highlight'
 
 const initialValue = `
 ## Overview
 
-The main idea of this lib is to help creating themes by using css custom variables alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors.
+The main idea of this lib is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors.
 
 To achieve that, this lib is split in two packages:
 * \`tame-your-theme/scss\` - scss helper functions to create css variable colors 
@@ -83,12 +82,37 @@ h3 {
 \`\`\`
 `;
 
+const darkenLightenMarkdown = `
+### @function darken
+
+This function makes the given color darker 
+
+* Lighter
+* Light
+* Normal
+* Dark
+* Darker
+
+This is common to use when making light borders in boxes for example.
+
+\`\`\`scss
+@import "~tame-your-theme-scss";
+
+h3 {
+  // $color-name: --h3-title, $opacity: 0.1
+  border-bottom: 1px solid change-alpha(--h3-title, 0.1);
+}
+\`\`\`
+`;
+
 export const Markdown = ({ children }) => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{children}</ReactMarkdown>
+  <ReactMarkdown>{children}</ReactMarkdown>
 );
 
-export const Hello = () => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-    {initialValue}
+export const DarkenLightenMarkdown = () => (
+  <ReactMarkdown className="darken-lighten-markdown">
+    {darkenLightenMarkdown}
   </ReactMarkdown>
 );
+
+export const Hello = () => <ReactMarkdown>{initialValue}</ReactMarkdown>;

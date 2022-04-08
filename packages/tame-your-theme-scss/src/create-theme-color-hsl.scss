@@ -88,6 +88,14 @@ $default-hover: 0.5;
   );
 }
 
+@function darken-theme-color($color-name, $lightness) {
+  @return change-lightness($color-name, -$lightness);
+}
+
+@function lighten-theme-color($color-name, $lightness) {
+  @return change-lightness($color-name, $lightness);
+}
+
 @function change-lightness($color-name, $lightness) {
   @return hsl(
     var(#{$color-name + "-h"}),
