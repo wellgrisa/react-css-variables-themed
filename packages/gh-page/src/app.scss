@@ -26,8 +26,8 @@ $grey-A700: #616161;
   @include create-theme-color(--markdown-string, #d2691e);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
-  @include create-theme-color-complimentary(--primary-color, #f6a820);
-  @include create-theme-color-triadic(--primary-color-triadic, #f6a820);
+  @include create-theme-color-complimentary(--primary-color, #ffa500);
+  @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
 
   @include create-theme-color-complimentary(
     --complimentary-primary-color,

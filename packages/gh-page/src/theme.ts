@@ -16,11 +16,11 @@ export const whiteTheme = [
   },
   {
     name: "primary-color",
-    value: "#f6a820",
+    value: "#ffa500",
   },
   {
     name: "primary-color-triadic",
-    value: "#f6a820",
+    value: "#ffa500",
   },
 ];
 
