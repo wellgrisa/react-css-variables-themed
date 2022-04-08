@@ -1,0 +1,90 @@
+@import "true";
+@import "./create-theme-color-hsl.scss";
+
+$mocked-color-name: "mocked-name";
+$mocked-color-value: #fff;
+
+@include describe("create-theme-color-hsl()") {
+  @include it(
+    "creates a theme variable for hue, saturation, lightness and hover"
+  ) {
+    $mocked-default-hover: 0.5;
+
+    @include assert {
+      @include output {
+        @include create-theme-color(
+          $mocked-color-name,
+          $mocked-color-value,
+          $mocked-default-hover
+        );
+      }
+
+      @include expect {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}-s: 0%;
+        #{$mocked-color-name}-l: 100%;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+        #{$mocked-color-name}-hover: hsla(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l),
+          $mocked-default-hover
+        );
+      }
+    }
+  }
+
+  @include it(
+    "creates complementary color when giving the $color-harmony variable"
+  ) {
+    $mocked-default-hover: 0.5;
+
+    @include assert {
+      @include output {
+        @include create-theme-color-complimentary(
+          $mocked-color-name,
+          $mocked-color-value
+        );
+      }
+
+      @include contains {
+        #{$mocked-color-name}-complimentary: hsl(
+          calc(var(#{$mocked-color-name}-h) + 180),
+          var(#{$mocked-color-name}-s),
+          calc(var(#{$mocked-color-name}-l))
+        );
+      }
+    }
+  }
+
+  @include it("changes alpha for the color name given") {
+    $mocked-alpha-opacity: 0.7;
+
+    @include assert-equal(
+      change-alpha($mocked-color-name, $mocked-alpha-opacity),
+      hsla(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        var(#{$mocked-color-name}-l),
+        $mocked-alpha-opacity
+      )
+    );
+  }
+
+  @include it("changes lightness for the color name given") {
+    $mocked-lightness: 10%;
+
+    @include assert-equal(
+      change-lightness($mocked-color-name, $mocked-lightness),
+      hsl(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        calc(var(mocked-name-l) + 10%)
+      )
+    );
+  }
+}

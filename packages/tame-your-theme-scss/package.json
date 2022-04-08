@@ -1,0 +1,36 @@
+{
+  "name": "tame-your-theme-scss",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
+  "scripts": {
+    "build": "yarn clean && tsc",
+    "clean": "rm -rf lib",
+    "test": "jest",
+    "test-watch": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "glob": "^7.2.0",
+    "path": "^0.12.7",
+    "jest": "^27.5.1",
+    "sass": "^1.49.9",
+    "sass-true": "^6.1.0",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0"
+  }
+}
