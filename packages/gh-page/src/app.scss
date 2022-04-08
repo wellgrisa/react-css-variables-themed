@@ -58,8 +58,10 @@ body {
     background-color: var(--background-color);
     color: var(--background-contrast-color);
 
-    .hljs-keyword {
-      color: var(--markdown-keyword);
+    .hljs:not(.language-sql) {
+      .hljs-keyword {
+        color: var(--markdown-keyword);
+      }
     }
 
     .hljs-string,
