@@ -14,7 +14,7 @@ export const whiteTheme = [
   },
   {
     name: "background-color",
-    value: "#f5f5f5",
+    value: "#ffffff",
   },
   {
     name: "primary-color",
@@ -33,7 +33,7 @@ const darkTheme = [
   },
   {
     name: "primary-color",
-    value: "#f6a820",
+    value: "#FFB6C1",
   },
 ];
 
@@ -48,7 +48,7 @@ const complimentaryTheme = [
   },
   {
     name: "primary-color",
-    value: "#f6a820",
+    value: "#90EE90",
   },
   {
     name: "complimentary-primary-color",

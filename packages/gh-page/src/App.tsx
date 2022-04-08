@@ -1,10 +1,13 @@
+import 'github-markdown-css/github-markdown-light.css'
 import './app.scss'
 
 import hexToHsl from 'hex-to-hsl'
 import { useEffect, useState } from 'react'
-import { Column, Row } from 'react-display-flex'
+import { Row } from 'react-display-flex'
 import { setTheme } from 'tame-your-theme'
 
+import { Hello, Markdown } from './Hello'
+// import { Hello } from './Hello'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 
 const getHueSaturationAndLightness = (value: string) => {
@@ -32,8 +35,9 @@ export default function App() {
   };
 
   return (
-    <Column element="section" className="App">
-      <Row className="radio-group" alignItemsCenter justifyContentCenter>
+    <div className="markdown-body">
+      <Markdown># A demo of `tame-your-theme`</Markdown>
+      <Row className="theme-radio-group" alignItemsCenter justifyContentCenter>
         <label>
           <input
             type="radio"
@@ -73,13 +77,7 @@ export default function App() {
         </label>
       </Row>
 
-      <Column element="section" className="card">
-        {currentTheme.map(({ name, value }) => (
-          <h1 style={{ color: value }}>
-            {name}: {value}
-          </h1>
-        ))}
-      </Column>
+      <Hello />
 
       {/* <h1>Primary Color Outside of Specific Themes</h1>
       <div data-theme="complimentary-theme">
@@ -96,6 +94,6 @@ export default function App() {
         <h2>--background-color-dark</h2>
         <h3>--hue</h3>
       </div> */}
-    </Column>
+    </div>
   );
 }
