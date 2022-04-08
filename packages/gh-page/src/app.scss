@@ -101,6 +101,8 @@ body {
       $code-canvas: rgba(175, 184, 193, 0.2);
       background-color: $code-canvas;
 
+      margin-top: $normal;
+
       code {
         background-color: transparent;
         color: var(--background-contrast-color);
@@ -118,8 +120,8 @@ body {
     background: var(--background-color);
     padding-top: $small;
     padding-bottom: $normal;
-    margin-bottom: $large;
-    border-bottom: 1px solid lighten-theme-color(--background-color, 20%);
+    margin-bottom: $normal;
+    border-bottom: 1px solid hsla(210, 18%, 87%, 1);
 
     h1 {
       margin-top: 0;

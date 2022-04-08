@@ -8,7 +8,6 @@ import { setTheme } from 'tame-your-theme'
 
 import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Hello } from './Hello'
 import { Markdown } from './markdown/Markdown'
-// import { Hello } from './Hello'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 
 const getHueSaturationAndLightness = (value: string) => {
