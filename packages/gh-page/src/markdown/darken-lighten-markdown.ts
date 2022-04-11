@@ -7,8 +7,6 @@ export const darkenLightenMarkdown = `
 * Dark
 * Darker
 
-The code below is the example above:
-
 \`\`\`scss
 @import "~tame-your-theme-scss";
 

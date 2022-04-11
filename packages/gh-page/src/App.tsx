@@ -6,8 +6,7 @@ import { useEffect, useState } from 'react'
 import { Row } from 'react-display-flex'
 import { setTheme } from 'tame-your-theme'
 
-import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Hello } from './Hello'
-import { Markdown } from './markdown/Markdown'
+import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Markdown, OverviewMarkdown } from './markdown/Markdown'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 
 const getHueSaturationAndLightness = (value: string) => {
@@ -65,8 +64,7 @@ export default function App() {
         </Row>
       </div>
 
-      <Hello />
-
+      <OverviewMarkdown />
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
     </div>

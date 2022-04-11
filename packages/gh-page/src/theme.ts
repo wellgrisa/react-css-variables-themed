@@ -22,6 +22,10 @@ export const whiteTheme = [
     name: "primary-color-triadic",
     value: "#ffa500",
   },
+  {
+    name: "primary-color-tetradic",
+    value: "#ffa500",
+  },
 ];
 
 const darkTheme = [
@@ -39,6 +43,10 @@ const darkTheme = [
   },
   {
     name: "primary-color-triadic",
+    value: "#FFB6C1",
+  },
+  {
+    name: "primary-color-tetradic",
     value: "#FFB6C1",
   },
 ];

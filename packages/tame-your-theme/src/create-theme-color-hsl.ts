@@ -26,7 +26,7 @@ export const createThemeColorHSL = ({
 }: ThemeColorCreation) => {
   const { hue, saturation, lightness } = getHueSaturationAndLightness(value)
 
-  setDocumentProperty({ name: `${name}-h`, value: hue, querySelector })
+  setDocumentProperty({ name: `${name}-h`, value: `${hue}deg`, querySelector })
   setDocumentProperty({ name: `${name}-s`, value: `${saturation}%`, querySelector })
   setDocumentProperty({ name: `${name}-l`, value: `${lightness}%`, querySelector })
 }

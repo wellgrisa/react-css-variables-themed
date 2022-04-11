@@ -24,10 +24,12 @@ $grey-A700: #616161;
   @include create-theme-color(--markdown-comment, #228b22);
   @include create-theme-color(--h3-title, #ff4500);
   @include create-theme-color(--markdown-string, #d2691e);
+  @include create-theme-color(--markdown-attribute, #6495ed);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
   @include create-theme-color-complimentary(--primary-color, #ffa500);
   @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
+  @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
 
   @include create-theme-color-complimentary(
     --complimentary-primary-color,
@@ -74,6 +76,10 @@ body {
 
     .hljs-comment {
       color: var(--markdown-comment);
+    }
+
+    .hljs-attribute {
+      color: var(--markdown-attribute);
     }
 
     h3 {
@@ -176,11 +182,27 @@ body {
       }
 
       &:nth-of-type(4) {
-        color: var(--primary-color-triadic-triadic-first-hue);
+        color: var(--primary-color-triadic-triadic-second-hue);
       }
 
       &:nth-of-type(5) {
-        color: var(--primary-color-triadic-triadic-second-hue);
+        color: var(--primary-color-triadic-triadic-third-hue);
+      }
+
+      &:nth-of-type(6) {
+        color: var(--primary-color-tetradic);
+      }
+
+      &:nth-of-type(7) {
+        color: var(--primary-color-tetradic-tetradic-second-hue);
+      }
+
+      &:nth-of-type(8) {
+        color: var(--primary-color-tetradic-tetradic-third-hue);
+      }
+
+      &:nth-of-type(9) {
+        color: var(--primary-color-tetradic-tetradic-fourth-hue);
       }
     }
   }
@@ -221,65 +243,65 @@ body {
     border: 1px solid change-lightness(--background-contrast-color, 60%);
   }
 
-  [data-theme="complimentary-theme"] {
-    @include create-theme-color-complimentary(--primary-color, #00ffff);
-    @include create-theme-color-complimentary(--background-color, #708090);
+  // [data-theme="complimentary-theme"] {
+  //   @include create-theme-color-complimentary(--primary-color, #00ffff);
+  //   @include create-theme-color-complimentary(--background-color, #708090);
 
-    @extend %theme-presenter-container;
+  //   @extend %theme-presenter-container;
 
-    h1 {
-      color: var(--primary-color);
+  //   h1 {
+  //     color: var(--primary-color);
 
-      &:hover {
-        color: var(--primary-color-hover);
-        cursor: pointer;
-      }
-    }
+  //     &:hover {
+  //       color: var(--primary-color-hover);
+  //       cursor: pointer;
+  //     }
+  //   }
 
-    h2 {
-      color: var(--primary-color-complimentary);
-    }
-  }
+  //   h2 {
+  //     color: var(--primary-color-complimentary);
+  //   }
+  // }
 
-  [data-theme="theme-by-hue"] {
-    @include create-theme-by-hue(257);
+  // [data-theme="theme-by-hue"] {
+  //   @include create-theme-by-hue(257);
 
-    @extend %theme-presenter-container;
+  //   @extend %theme-presenter-container;
 
-    h1 {
-      color: var(--complimentary-hue);
-    }
+  //   h1 {
+  //     color: var(--complimentary-hue);
+  //   }
 
-    h2 {
-      color: var(--background-color-dark);
-    }
+  //   h2 {
+  //     color: var(--background-color-dark);
+  //   }
 
-    h3 {
-      color: var(--hue);
-    }
-  }
+  //   h3 {
+  //     color: var(--hue);
+  //   }
+  // }
 
-  [data-theme="triadic-theme"] {
-    @include create-theme-color-triadic(--primary-color, #00ffff);
-    @include create-theme-color-complimentary(--background-color, #708090);
+  // [data-theme="triadic-theme"] {
+  //   @include create-theme-color-triadic(--primary-color, #00ffff);
+  //   @include create-theme-color-complimentary(--background-color, #708090);
 
-    @extend %theme-presenter-container;
+  //   @extend %theme-presenter-container;
 
-    h1 {
-      color: var(--primary-color);
+  //   h1 {
+  //     color: var(--primary-color);
 
-      &:hover {
-        color: var(--primary-color-hover);
-        cursor: pointer;
-      }
-    }
+  //     &:hover {
+  //       color: var(--primary-color-hover);
+  //       cursor: pointer;
+  //     }
+  //   }
 
-    h2 {
-      color: var(--primary-color-triadic-first-hue);
-    }
+  //   h2 {
+  //     color: var(--primary-color-triadic-first-hue);
+  //   }
 
-    h3 {
-      color: var(--primary-color-triadic-second-hue);
-    }
-  }
+  //   h3 {
+  //     color: var(--primary-color-triadic-second-hue);
+  //   }
+  // }
 }

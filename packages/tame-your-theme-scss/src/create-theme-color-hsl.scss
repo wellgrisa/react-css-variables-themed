@@ -7,7 +7,7 @@ $default-hover: 0.5;
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
 
-  $complimentary-factor: 180;
+  $complimentary-factor: 180deg;
 
   #{$color-name}-complimentary: hsl(
     calc(var(#{$color-name + "-h"}) - $complimentary-factor),
@@ -23,15 +23,43 @@ $default-hover: 0.5;
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
 
-  $triadic-factor: 120;
+  $triadic-factor: 120deg;
 
-  #{$color-name}-triadic-first-hue: hsl(
+  #{$color-name}-triadic-second-hue: hsl(
     calc(var(#{$color-name + "-h"}) + $triadic-factor),
     var(#{$color-name + "-s"}),
     calc(var(#{$color-name + "-l"}))
   );
-  #{$color-name}-triadic-second-hue: hsl(
+  #{$color-name}-triadic-third-hue: hsl(
     calc(var(#{$color-name + "-h"}) + $triadic-factor * 2),
+    var(#{$color-name + "-s"}),
+    calc(var(#{$color-name + "-l"}))
+  );
+}
+
+@mixin create-theme-color-tetradic(
+  $color-name,
+  $color-value,
+  $hover: $default-hover
+) {
+  @include create-theme-color($color-name, $color-value, $hover);
+
+  $tetradic-second-color: calc(var(#{$color-name + "-h"}) + 30deg);
+  $tetradic-third-color: calc(var(#{$color-name + "-h"}) + 180deg);
+  $tetradic-fourth-color: calc($tetradic-second-color + 180deg);
+
+  #{$color-name}-tetradic-second-hue: hsl(
+    $tetradic-second-color,
+    var(#{$color-name + "-s"}),
+    calc(var(#{$color-name + "-l"}))
+  );
+  #{$color-name}-tetradic-third-hue: hsl(
+    $tetradic-third-color,
+    var(#{$color-name + "-s"}),
+    calc(var(#{$color-name + "-l"}))
+  );
+  #{$color-name}-tetradic-fourth-hue: hsl(
+    $tetradic-fourth-color,
     var(#{$color-name + "-s"}),
     calc(var(#{$color-name + "-l"}))
   );
