@@ -21,7 +21,7 @@ $grey-A700: #616161;
 :root {
   @include create-theme-color(--black-text-color, #24292f);
   @include create-theme-color(--markdown-keyword, #ff00ff);
-  @include create-theme-color(--markdown-comment, #228b22);
+  @include create-theme-color(--markdown-comment, #3cb371);
   @include create-theme-color(--h3-title, #ff4500);
   @include create-theme-color(--markdown-string, #d2691e);
   @include create-theme-color(--markdown-attribute, #6495ed);
@@ -30,6 +30,7 @@ $grey-A700: #616161;
   @include create-theme-color-complimentary(--primary-color, #ffa500);
   @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
   @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
+  @include create-theme-color-analogous(--primary-color-analogous, #ffa500);
 
   @include create-theme-color-complimentary(
     --complimentary-primary-color,
@@ -135,7 +136,11 @@ body {
   }
 
   .theme-radio-group {
-    cursor: pointer;
+    label,
+    input {
+      cursor: pointer;
+    }
+
     accent-color: var(--primary-color);
     margin-top: $normal;
     gap: $small;
@@ -169,40 +174,21 @@ body {
 
   .color-harmonies-markdown {
     h4 {
-      &:nth-of-type(1) {
-        color: var(--primary-color);
-      }
+      $colors-harmonies: --primary-color, --primary-color-complimentary,
+        --primary-color-triadic, --primary-color-triadic-triadic-second-hue,
+        --primary-color-triadic-triadic-third-hue, --primary-color-tetradic,
+        --primary-color-tetradic-tetradic-second-hue,
+        --primary-color-tetradic-tetradic-third-hue,
+        --primary-color-tetradic-tetradic-fourth-hue, --primary-color-analogous,
+        --primary-color-analogous-analogous-second-hue,
+        --primary-color-analogous-analogous-third-hue,
+        --primary-color-analogous-analogous-fourth-hue,
+        --primary-color-analogous-analogous-fifth-hue;
 
-      &:nth-of-type(2) {
-        color: var(--primary-color-complimentary);
-      }
-
-      &:nth-of-type(3) {
-        color: var(--primary-color-triadic);
-      }
-
-      &:nth-of-type(4) {
-        color: var(--primary-color-triadic-triadic-second-hue);
-      }
-
-      &:nth-of-type(5) {
-        color: var(--primary-color-triadic-triadic-third-hue);
-      }
-
-      &:nth-of-type(6) {
-        color: var(--primary-color-tetradic);
-      }
-
-      &:nth-of-type(7) {
-        color: var(--primary-color-tetradic-tetradic-second-hue);
-      }
-
-      &:nth-of-type(8) {
-        color: var(--primary-color-tetradic-tetradic-third-hue);
-      }
-
-      &:nth-of-type(9) {
-        color: var(--primary-color-tetradic-tetradic-fourth-hue);
+      @each $color-harmony in $colors-harmonies {
+        &:nth-of-type(#{index($colors-harmonies, $color-harmony)}) {
+          color: var(#{$color-harmony});
+        }
       }
     }
   }

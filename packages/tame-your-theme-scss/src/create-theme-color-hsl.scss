@@ -65,6 +65,29 @@ $default-hover: 0.5;
   );
 }
 
+$analogous-factors: (
+  "second": -60deg,
+  "third": -30deg,
+  "fourth": 30deg,
+  "fifth": 60deg,
+);
+
+@mixin create-theme-color-analogous(
+  $color-name,
+  $color-value,
+  $hover: $default-hover
+) {
+  @include create-theme-color($color-name, $color-value, $hover);
+
+  @each $analogous-factor-name, $factor in $analogous-factors {
+    #{$color-name}-analogous-#{$analogous-factor-name}-hue: hsl(
+      calc(var(#{$color-name + "-h"}) + $factor),
+      var(#{$color-name + "-s"}),
+      calc(var(#{$color-name + "-l"}))
+    );
+  }
+}
+
 @mixin create-theme-color($color-name, $color-value, $hover: $default-hover) {
   #{$color-name}-h: hue($color-value);
   #{$color-name}-s: saturation($color-value);
