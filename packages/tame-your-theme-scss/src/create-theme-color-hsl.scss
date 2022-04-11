@@ -88,6 +88,30 @@ $analogous-factors: (
   }
 }
 
+$split-complimentary-factors: (
+  "split-complimentary-second-hue": -150deg,
+  "split-complimentary-third-hue": 150deg,
+);
+
+@mixin create-theme-color-split-complimentary(
+  $color-name,
+  $color-value,
+  $hover: $default-hover
+) {
+  @include create-theme-color($color-name, $color-value, $hover);
+  @include create-theme-by-factors($color-name, $split-complimentary-factors);
+}
+
+@mixin create-theme-by-factors($color-name, $factors) {
+  @each $name, $factor in $factors {
+    #{$color-name}-#{$name}: hsl(
+      calc(var(#{$color-name + "-h"}) + $factor),
+      var(#{$color-name + "-s"}),
+      calc(var(#{$color-name + "-l"}))
+    );
+  }
+}
+
 @mixin create-theme-color($color-name, $color-value, $hover: $default-hover) {
   #{$color-name}-h: hue($color-value);
   #{$color-name}-s: saturation($color-value);

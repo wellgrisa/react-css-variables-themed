@@ -5,6 +5,9 @@ export enum ThemesHarmonies {
   White = "white",
 }
 
+const yellowPrimaryColor = "#ffa500";
+const pinkPrimaryColor = "#FFB6C1";
+
 export const whiteTheme = [
   {
     name: "background-contrast-color",
@@ -16,19 +19,23 @@ export const whiteTheme = [
   },
   {
     name: "primary-color",
-    value: "#ffa500",
+    value: yellowPrimaryColor,
   },
   {
     name: "primary-color-triadic",
-    value: "#ffa500",
+    value: yellowPrimaryColor,
   },
   {
     name: "primary-color-tetradic",
-    value: "#ffa500",
+    value: yellowPrimaryColor,
   },
   {
     name: "primary-color-analogous",
-    value: "#ffa500",
+    value: yellowPrimaryColor,
+  },
+  {
+    name: "primary-color-split-complimentary",
+    value: yellowPrimaryColor,
   },
 ];
 
@@ -43,19 +50,23 @@ const darkTheme = [
   },
   {
     name: "primary-color",
-    value: "#FFB6C1",
+    value: pinkPrimaryColor,
   },
   {
     name: "primary-color-triadic",
-    value: "#FFB6C1",
+    value: pinkPrimaryColor,
   },
   {
     name: "primary-color-tetradic",
-    value: "#FFB6C1",
+    value: pinkPrimaryColor,
   },
   {
     name: "primary-color-analogous",
-    value: "#FFB6C1",
+    value: pinkPrimaryColor,
+  },
+  {
+    name: "primary-color-split-complimentary",
+    value: pinkPrimaryColor,
   },
 ];
 

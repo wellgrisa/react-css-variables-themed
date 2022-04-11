@@ -31,6 +31,10 @@ $grey-A700: #616161;
   @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
   @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
   @include create-theme-color-analogous(--primary-color-analogous, #ffa500);
+  @include create-theme-color-split-complimentary(
+    --primary-color-split-complimentary,
+    #ffa500
+  );
 
   @include create-theme-color-complimentary(
     --complimentary-primary-color,
@@ -175,6 +179,9 @@ body {
   .color-harmonies-markdown {
     h4 {
       $colors-harmonies: --primary-color, --primary-color-complimentary,
+        --primary-color-split-complimentary,
+        --primary-color-split-complimentary-split-complimentary-second-hue,
+        --primary-color-split-complimentary-split-complimentary-third-hue,
         --primary-color-triadic, --primary-color-triadic-triadic-second-hue,
         --primary-color-triadic-triadic-third-hue, --primary-color-tetradic,
         --primary-color-tetradic-tetradic-second-hue,

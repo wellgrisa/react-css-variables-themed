@@ -24,6 +24,36 @@ h4 {
 }
 \`\`\`
 
+### @function create-theme-color-split-complimentary
+
+This function creates the color given and also a complimentary one to it.
+
+#### var(--primary-color)
+#### var(--primary-color-split-complimentary-second-hue)
+#### var(--primary-color-split-complimentary-third-hue)
+
+\`\`\`scss
+@import "~tame-your-theme-scss";
+
+:root {
+  @include create-theme-color-split-complimentary(--primary-color, #f6a820);
+}
+
+h4 {
+  &:nth-of-type(1) {
+    color: var(--primary-color);
+  }
+
+  &:nth-of-type(2) {
+    color: var(--primary-color-split-complimentary-second-hue);
+  }
+
+  &:nth-of-type(3) {
+    color: var(--primary-color-split-complimentary-third-hue);
+  }
+}
+\`\`\`
+
 ### @function create-theme-color-triadic
 
 This function creates the color given and two other colors, **#{color}-triadic-second-hue** and **#{color}-triadic-third-hue**.
