@@ -66,10 +66,10 @@ $default-hover: 0.5;
 }
 
 $analogous-factors: (
-  "second": -60deg,
-  "third": -30deg,
-  "fourth": 30deg,
-  "fifth": 60deg,
+  "analogous-second-hue": -60deg,
+  "analogous-third-hue": -30deg,
+  "analogous-fourth-hue": 30deg,
+  "analogous-fifth-hue": 60deg,
 );
 
 @mixin create-theme-color-analogous(
@@ -78,14 +78,7 @@ $analogous-factors: (
   $hover: $default-hover
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
-
-  @each $analogous-factor-name, $factor in $analogous-factors {
-    #{$color-name}-analogous-#{$analogous-factor-name}-hue: hsl(
-      calc(var(#{$color-name + "-h"}) + $factor),
-      var(#{$color-name + "-s"}),
-      calc(var(#{$color-name + "-l"}))
-    );
-  }
+  @include create-theme-by-factors($color-name, $analogous-factors);
 }
 
 $split-complimentary-factors: (
@@ -100,16 +93,6 @@ $split-complimentary-factors: (
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
   @include create-theme-by-factors($color-name, $split-complimentary-factors);
-}
-
-@mixin create-theme-by-factors($color-name, $factors) {
-  @each $name, $factor in $factors {
-    #{$color-name}-#{$name}: hsl(
-      calc(var(#{$color-name + "-h"}) + $factor),
-      var(#{$color-name + "-s"}),
-      calc(var(#{$color-name + "-l"}))
-    );
-  }
 }
 
 @mixin create-theme-color($color-name, $color-value, $hover: $default-hover) {
@@ -161,6 +144,16 @@ $split-complimentary-factors: (
     var(#{$color-name + "-l"}),
     $opacity
   );
+}
+
+@mixin create-theme-by-factors($color-name, $factors) {
+  @each $name, $factor in $factors {
+    #{$color-name}-#{$name}: hsl(
+      calc(var(#{$color-name + "-h"}) + $factor),
+      var(#{$color-name + "-s"}),
+      calc(var(#{$color-name + "-l"}))
+    );
+  }
 }
 
 @function darken-theme-color($color-name, $lightness) {
