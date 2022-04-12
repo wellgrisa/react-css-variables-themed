@@ -4,10 +4,13 @@ import "./app.scss";
 import hexToHsl from "hex-to-hsl";
 import { useEffect, useState } from "react";
 import { Row } from "react-display-flex";
-import { setTheme } from "tame-your-theme-css-declaration";
 
+import { setTheme } from "@tame-your-theme/css-style-declaration";
+
+import { ThemedDiv } from "./markdown/css-style-declaration-markdown";
 import {
   ColorHarmoniesMarkdown,
+  CssStyleDeclarationMarkdown,
   DarkenLightenMarkdown,
   Markdown,
   OverviewMarkdown,
@@ -69,6 +72,8 @@ export default function App() {
         </Row>
       </div>
 
+      <CssStyleDeclarationMarkdown />
+      <ThemedDiv />
       <OverviewMarkdown />
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
