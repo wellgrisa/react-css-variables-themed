@@ -1,26 +1,4 @@
 export const overviewMarkdown = `
-## Overview
-
-The main idea of this lib is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors.
-
-To achieve that, this lib is split in two packages:
-* \`@tame-your-theme/scss\` - scss helper functions to create css variable colors 
-* \`@tame-your-theme/css-style-declaration\` - css style declarations function helpers
-
-## Installation
-
-Using npm:
-
-\`\`\`
-npm install @tame-your-theme/css-style-declaration
-\`\`\`
-
-Using yarn:
-
-\`\`\`
-yarn add @tame-your-theme/css-style-declaration
-\`\`\`
-
 ## Why [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) ?
 
 Colors come in different ways from different designers and companies, sometimes in:

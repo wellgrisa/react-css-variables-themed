@@ -1,5 +1,6 @@
 @import "~@tame-your-theme/scss";
 @import "./guidelines.scss";
+@import "./custom-checkbox.scss";
 
 $grey-50: #fafafa;
 $grey-60: #a0a0a0;
@@ -36,6 +37,10 @@ $grey-A700: #616161;
     --primary-color-split-complementary,
     #ffa500
   );
+  @include create-theme-color-complementary(
+    --complementary-primary-color,
+    #00ffff
+  );
   @include create-theme-color(--themed-div-background-color, #ffffff);
   @include create-theme-color(
     --themed-div-background-contrast-color,
@@ -44,11 +49,6 @@ $grey-A700: #616161;
   @include create-theme-color-complementary(
     --themed-div-primary-color,
     #ffa500
-  );
-
-  @include create-theme-color-complementary(
-    --complementary-primary-color,
-    #00ffff
   );
 }
 
@@ -117,6 +117,7 @@ body {
     }
 
     code {
+      cursor: pointer;
       background-color: var(--primary-color);
 
       &:hover {
@@ -141,18 +142,35 @@ body {
         }
       }
     }
+
+    .tldr-steps {
+      code {
+        background-color: $grey-200;
+      }
+    }
   }
 
   .themed {
+    text-align: center;
     background-color: var(--themed-div-background-color);
     color: var(--themed-div-background-contrast-color);
 
     h1 {
       color: var(--themed-div-primary-color);
+      border-bottom: none;
+    }
+
+    label {
+      cursor: pointer;
+
+      input {
+        margin-right: $tiny;
+        margin-top: $normal;
+      }
     }
 
     border: 1px solid
-      change-lightness(--themed-div-background-contrast-color, 60%);
+      change-lightness(--themed-div-background-contrast-color, 80%);
     border-radius: $small;
     padding: $small;
     margin-top: $normal;
@@ -160,6 +178,7 @@ body {
 
   .sticky {
     position: sticky;
+    z-index: 1;
     top: 0;
     background: var(--background-color);
     padding-top: $small;

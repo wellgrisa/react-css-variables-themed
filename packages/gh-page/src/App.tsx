@@ -1,21 +1,21 @@
-import "github-markdown-css/github-markdown-light.css";
-import "./app.scss";
+import 'github-markdown-css/github-markdown-light.css'
+import './scss/app.scss'
 
-import hexToHsl from "hex-to-hsl";
-import { useEffect, useState } from "react";
-import { Row } from "react-display-flex";
+import hexToHsl from 'hex-to-hsl'
+import { useEffect, useState } from 'react'
+import { Row } from 'react-display-flex'
 
-import { setTheme } from "@tame-your-theme/css-style-declaration";
+import { setTheme } from '@tame-your-theme/css-style-declaration'
 
-import { ThemedDiv } from "./markdown/css-style-declaration-markdown";
 import {
   ColorHarmoniesMarkdown,
   CssStyleDeclarationMarkdown,
   DarkenLightenMarkdown,
   Markdown,
-  OverviewMarkdown,
-} from "./markdown/Markdown";
-import { themes, whiteTheme, ThemesHarmonies } from "./theme";
+} from './markdown/Markdown'
+import { overviewMarkdown, tldrMarkdown } from './markdown/tlrl-markdown'
+import { themes, whiteTheme, ThemesHarmonies } from './theme'
+import { ThemedDiv } from './ThemedDiv/ThemedDiv'
 
 const getHueSaturationAndLightness = (value: string) => {
   const [hue, saturation, lightness] = hexToHsl(value);
@@ -72,9 +72,10 @@ export default function App() {
         </Row>
       </div>
 
-      <CssStyleDeclarationMarkdown />
+      <Markdown>{overviewMarkdown}</Markdown>
       <ThemedDiv />
-      <OverviewMarkdown />
+      <Markdown>{tldrMarkdown}</Markdown>
+      <CssStyleDeclarationMarkdown />
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
     </div>
