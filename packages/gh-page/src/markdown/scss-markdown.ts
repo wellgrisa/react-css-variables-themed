@@ -1,25 +1,5 @@
-export const overviewMarkdown = `
-## Overview
-
-The main idea of this lib is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors.
-
-To achieve that, this lib is split in two packages:
-* \`tame-your-theme/scss\` - scss helper functions to create css variable colors 
-* \`tame-your-theme/tame-your-theme-css-declaration\` - helper functions to change theme in runtime
-
-## Installation
-
-Using npm:
-
-\`\`\`
-npm install @tame-your-theme/tame-your-theme-css-declaration
-\`\`\`
-
-Using yarn:
-
-\`\`\`
-yarn add @tame-your-theme-functions/runtime-handler
-\`\`\`
+export const scssMarkdown = `***
+# The package \`tame-your-theme/scss\`
 
 ## Why [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) ?
 
@@ -34,8 +14,6 @@ Colors come in different ways from different designers and companies, sometimes 
 * lightness is the lighting intensity: 0% is the darkest, 100% is the lightest
 
 In short HSL is easier to read, modify, improvise and this lib is willing to show how to achieve it.
-
-## Functions in \`tame-your-theme/scss\`
 
 ### @mixin create-theme-color
 

@@ -1,4 +1,4 @@
-import { ThemeAttribute } from "tame-your-theme-css-declaration";
+import { ThemeAttribute } from "@tame-your-theme/css-style-declaration";
 
 export enum ThemesHarmonies {
   Dark = "dark",

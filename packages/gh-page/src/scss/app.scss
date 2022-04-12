@@ -1,5 +1,6 @@
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 @import "./guidelines.scss";
+@import "./custom-checkbox.scss";
 
 $grey-50: #fafafa;
 $grey-60: #a0a0a0;
@@ -25,6 +26,7 @@ $grey-A700: #616161;
   @include create-theme-color(--h3-title, #ff4500);
   @include create-theme-color(--markdown-string, #d2691e);
   @include create-theme-color(--markdown-attribute, #6495ed);
+  @include create-theme-color(--markdown-function, #ff8c00);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
   @include create-theme-color-complementary(--primary-color, #ffa500);
@@ -35,10 +37,18 @@ $grey-A700: #616161;
     --primary-color-split-complementary,
     #ffa500
   );
-
   @include create-theme-color-complementary(
     --complementary-primary-color,
     #00ffff
+  );
+  @include create-theme-color(--themed-div-background-color, #ffffff);
+  @include create-theme-color(
+    --themed-div-background-contrast-color,
+    $grey-900
+  );
+  @include create-theme-color-complementary(
+    --themed-div-primary-color,
+    #ffa500
   );
 }
 
@@ -75,15 +85,23 @@ body {
 
     .hljs-string,
     .hljs-selector-pseudo,
-    .hljs-selector-tag {
+    .hljs-selector-tag,
+    .hljs-selector-class {
       color: var(--markdown-string);
+    }
+
+    .hljs-title.function_ {
+      color: var(--markdown-function);
     }
 
     .hljs-comment {
       color: var(--markdown-comment);
     }
 
-    .hljs-attribute {
+    .hljs-attribute,
+    .hljs-attr,
+    .hljs-params,
+    .hljs .xml {
       color: var(--markdown-attribute);
     }
 
@@ -99,6 +117,7 @@ body {
     }
 
     code {
+      cursor: pointer;
       background-color: var(--primary-color);
 
       &:hover {
@@ -123,10 +142,48 @@ body {
         }
       }
     }
+
+    .tldr-steps {
+      code {
+        background-color: $grey-200;
+      }
+    }
+
+    hr {
+      margin-top: $large;
+      margin-bottom: $large;
+    }
+  }
+
+  .themed {
+    text-align: center;
+    background-color: var(--themed-div-background-color);
+    color: var(--themed-div-background-contrast-color);
+
+    h1 {
+      color: var(--themed-div-primary-color);
+      border-bottom: none;
+    }
+
+    label {
+      cursor: pointer;
+
+      input {
+        margin-right: $tiny;
+        margin-top: $normal;
+      }
+    }
+
+    border: 1px solid
+      change-lightness(--themed-div-background-contrast-color, 80%);
+    border-radius: $small;
+    padding: $small;
+    margin-top: $normal;
   }
 
   .sticky {
     position: sticky;
+    z-index: 1;
     top: 0;
     background: var(--background-color);
     padding-top: $small;

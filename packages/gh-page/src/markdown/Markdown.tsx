@@ -4,15 +4,23 @@ import rehypeHighlight from 'rehype-highlight'
 
 import { colorHarmoniesMarkdown } from './color-harmonies-markdown'
 import { darkenLightenMarkdown } from './darken-lighten-markdown'
-import { overviewMarkdown } from './overview-markdown'
+import { tldrMarkdown } from './tlrl-markdown'
 
-export const Markdown = ({ className, children }: ReactMarkdownOptions) => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]} className={className}>
+export const Markdown = ({
+  className,
+  children,
+  ...props
+}: ReactMarkdownOptions) => (
+  <ReactMarkdown
+    {...props}
+    rehypePlugins={[rehypeHighlight]}
+    className={className}
+  >
     {children}
   </ReactMarkdown>
 );
 
-export const OverviewMarkdown = () => <Markdown>{overviewMarkdown}</Markdown>;
+export const TlDrMarkdown = () => <Markdown>{tldrMarkdown}</Markdown>;
 
 export const DarkenLightenMarkdown = () => (
   <Markdown className="darken-lighten-markdown">
