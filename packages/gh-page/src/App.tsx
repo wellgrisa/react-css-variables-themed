@@ -7,12 +7,9 @@ import { Row } from 'react-display-flex'
 
 import { setTheme } from '@tame-your-theme/css-style-declaration'
 
-import {
-  ColorHarmoniesMarkdown,
-  CssStyleDeclarationMarkdown,
-  DarkenLightenMarkdown,
-  Markdown,
-} from './markdown/Markdown'
+import { cssStyleDeclarationMarkdown } from './markdown/css-style-declaration-markdown'
+import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Markdown } from './markdown/Markdown'
+import { scssMarkdown } from './markdown/scss-markdown'
 import { overviewMarkdown, tldrMarkdown } from './markdown/tlrl-markdown'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
 import { ThemedDiv } from './ThemedDiv/ThemedDiv'
@@ -75,7 +72,8 @@ export default function App() {
       <Markdown>{overviewMarkdown}</Markdown>
       <ThemedDiv />
       <Markdown>{tldrMarkdown}</Markdown>
-      <CssStyleDeclarationMarkdown />
+      <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
+      <Markdown>{scssMarkdown}</Markdown>
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
     </div>

@@ -1,6 +1,6 @@
-export const cssStyleDeclarationMarkdown = `## Functions in \`@tame-your-theme/css-style-declaration\`
+export const cssStyleDeclarationMarkdown = `***
 
-The idea of this package is to benefit from the native api from [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model) to change the css variables in runtime.
+# The package \`@tame-your-theme/css-style-declaration\`
 
 ### setTheme
 

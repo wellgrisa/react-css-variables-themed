@@ -3,24 +3,24 @@ import { ReactMarkdownOptions } from 'react-markdown/lib/react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 
 import { colorHarmoniesMarkdown } from './color-harmonies-markdown'
-import { cssStyleDeclarationMarkdown } from './css-style-declaration-markdown'
 import { darkenLightenMarkdown } from './darken-lighten-markdown'
 import { tldrMarkdown } from './tlrl-markdown'
-import { overviewMarkdown } from './why-markdown'
 
-export const Markdown = ({ className, children }: ReactMarkdownOptions) => (
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]} className={className}>
+export const Markdown = ({
+  className,
+  children,
+  ...props
+}: ReactMarkdownOptions) => (
+  <ReactMarkdown
+    {...props}
+    rehypePlugins={[rehypeHighlight]}
+    className={className}
+  >
     {children}
   </ReactMarkdown>
 );
 
 export const TlDrMarkdown = () => <Markdown>{tldrMarkdown}</Markdown>;
-
-export const OverviewMarkdown = () => <Markdown>{overviewMarkdown}</Markdown>;
-
-export const CssStyleDeclarationMarkdown = () => (
-  <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
-);
 
 export const DarkenLightenMarkdown = () => (
   <Markdown className="darken-lighten-markdown">

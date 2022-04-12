@@ -1,4 +1,6 @@
-export const overviewMarkdown = `
+export const scssMarkdown = `***
+# The package \`tame-your-theme/scss\`
+
 ## Why [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) ?
 
 Colors come in different ways from different designers and companies, sometimes in:
@@ -12,8 +14,6 @@ Colors come in different ways from different designers and companies, sometimes 
 * lightness is the lighting intensity: 0% is the darkest, 100% is the lightest
 
 In short HSL is easier to read, modify, improvise and this lib is willing to show how to achieve it.
-
-## Functions in \`tame-your-theme/scss\`
 
 ### @mixin create-theme-color
 

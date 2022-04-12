@@ -148,6 +148,11 @@ body {
         background-color: $grey-200;
       }
     }
+
+    hr {
+      margin-top: $large;
+      margin-bottom: $large;
+    }
   }
 
   .themed {
