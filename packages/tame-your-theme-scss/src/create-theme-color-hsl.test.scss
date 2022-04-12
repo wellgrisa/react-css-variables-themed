@@ -45,14 +45,14 @@ $mocked-color-value: #fff;
 
     @include assert {
       @include output {
-        @include create-theme-color-complimentary(
+        @include create-theme-color-complementary(
           $mocked-color-name,
           $mocked-color-value
         );
       }
 
       @include contains {
-        #{$mocked-color-name}-complimentary: hsl(
+        #{$mocked-color-name}-complementary: hsl(
           calc(var(#{$mocked-color-name}-h) + 180),
           var(#{$mocked-color-name}-s),
           calc(var(#{$mocked-color-name}-l))

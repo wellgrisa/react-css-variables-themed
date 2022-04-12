@@ -1,16 +1,16 @@
 export const colorHarmoniesMarkdown = `
-### @function create-theme-color-complimentary
+### @function create-theme-color-complementary
 
-This function creates the color given and also a complimentary one to it.
+This function creates the color given and also a complementary one to it.
 
 #### var(--primary-color)
-#### var(--primary-color-complimentary)
+#### var(--primary-color-complementary)
 
 \`\`\`scss
 @import "~tame-your-theme-scss";
 
 :root {
-  @include create-theme-color-complimentary(--primary-color, #f6a820);
+  @include create-theme-color-complementary(--primary-color, #f6a820);
 }
 
 h4 {
@@ -19,24 +19,24 @@ h4 {
   }
 
   &:nth-of-type(2) {
-    color: var(--primary-color-complimentary);
+    color: var(--primary-color-complementary);
   }
 }
 \`\`\`
 
-### @function create-theme-color-split-complimentary
+### @function create-theme-color-split-complementary
 
-This function creates the color given and also a complimentary one to it.
+This function creates the color given and also a complementary one to it.
 
 #### var(--primary-color)
-#### var(--primary-color-split-complimentary-second-hue)
-#### var(--primary-color-split-complimentary-third-hue)
+#### var(--primary-color-split-complementary-second-hue)
+#### var(--primary-color-split-complementary-third-hue)
 
 \`\`\`scss
 @import "~tame-your-theme-scss";
 
 :root {
-  @include create-theme-color-split-complimentary(--primary-color, #f6a820);
+  @include create-theme-color-split-complementary(--primary-color, #f6a820);
 }
 
 h4 {
@@ -45,11 +45,11 @@ h4 {
   }
 
   &:nth-of-type(2) {
-    color: var(--primary-color-split-complimentary-second-hue);
+    color: var(--primary-color-split-complementary-second-hue);
   }
 
   &:nth-of-type(3) {
-    color: var(--primary-color-split-complimentary-third-hue);
+    color: var(--primary-color-split-complementary-third-hue);
   }
 }
 \`\`\`

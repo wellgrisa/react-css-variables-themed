@@ -5,14 +5,14 @@ The main idea of this lib is to help creating themes by using [CSS custom variab
 
 To achieve that, this lib is split in two packages:
 * \`tame-your-theme/scss\` - scss helper functions to create css variable colors 
-* \`tame-your-theme/functions\` - helper functions to change theme in runtime
+* \`tame-your-theme/tame-your-theme-css-declaration\` - helper functions to change theme in runtime
 
 ## Installation
 
 Using npm:
 
 \`\`\`
-npm install @tame-your-theme/runtime-handler
+npm install @tame-your-theme/tame-your-theme-css-declaration
 \`\`\`
 
 Using yarn:

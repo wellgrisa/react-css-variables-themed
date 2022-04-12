@@ -27,17 +27,17 @@ $grey-A700: #616161;
   @include create-theme-color(--markdown-attribute, #6495ed);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
-  @include create-theme-color-complimentary(--primary-color, #ffa500);
+  @include create-theme-color-complementary(--primary-color, #ffa500);
   @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
   @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
   @include create-theme-color-analogous(--primary-color-analogous, #ffa500);
-  @include create-theme-color-split-complimentary(
-    --primary-color-split-complimentary,
+  @include create-theme-color-split-complementary(
+    --primary-color-split-complementary,
     #ffa500
   );
 
-  @include create-theme-color-complimentary(
-    --complimentary-primary-color,
+  @include create-theme-color-complementary(
+    --complementary-primary-color,
     #00ffff
   );
 }
@@ -178,10 +178,10 @@ body {
 
   .color-harmonies-markdown {
     h4 {
-      $colors-harmonies: --primary-color, --primary-color-complimentary,
-        --primary-color-split-complimentary,
-        --primary-color-split-complimentary-split-complimentary-second-hue,
-        --primary-color-split-complimentary-split-complimentary-third-hue,
+      $colors-harmonies: --primary-color, --primary-color-complementary,
+        --primary-color-split-complementary,
+        --primary-color-split-complementary-split-complementary-second-hue,
+        --primary-color-split-complementary-split-complementary-third-hue,
         --primary-color-triadic, --primary-color-triadic-triadic-second-hue,
         --primary-color-triadic-triadic-third-hue, --primary-color-tetradic,
         --primary-color-tetradic-tetradic-second-hue,
@@ -236,9 +236,9 @@ body {
     border: 1px solid change-lightness(--background-contrast-color, 60%);
   }
 
-  // [data-theme="complimentary-theme"] {
-  //   @include create-theme-color-complimentary(--primary-color, #00ffff);
-  //   @include create-theme-color-complimentary(--background-color, #708090);
+  // [data-theme="complementary-theme"] {
+  //   @include create-theme-color-complementary(--primary-color, #00ffff);
+  //   @include create-theme-color-complementary(--background-color, #708090);
 
   //   @extend %theme-presenter-container;
 
@@ -252,7 +252,7 @@ body {
   //   }
 
   //   h2 {
-  //     color: var(--primary-color-complimentary);
+  //     color: var(--primary-color-complementary);
   //   }
   // }
 
@@ -262,7 +262,7 @@ body {
   //   @extend %theme-presenter-container;
 
   //   h1 {
-  //     color: var(--complimentary-hue);
+  //     color: var(--complementary-hue);
   //   }
 
   //   h2 {
@@ -276,7 +276,7 @@ body {
 
   // [data-theme="triadic-theme"] {
   //   @include create-theme-color-triadic(--primary-color, #00ffff);
-  //   @include create-theme-color-complimentary(--background-color, #708090);
+  //   @include create-theme-color-complementary(--background-color, #708090);
 
   //   @extend %theme-presenter-container;
 

@@ -1,13 +1,18 @@
-import 'github-markdown-css/github-markdown-light.css'
-import './app.scss'
+import "github-markdown-css/github-markdown-light.css";
+import "./app.scss";
 
-import hexToHsl from 'hex-to-hsl'
-import { useEffect, useState } from 'react'
-import { Row } from 'react-display-flex'
-import { setTheme } from 'tame-your-theme'
+import hexToHsl from "hex-to-hsl";
+import { useEffect, useState } from "react";
+import { Row } from "react-display-flex";
+import { setTheme } from "tame-your-theme-css-declaration";
 
-import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Markdown, OverviewMarkdown } from './markdown/Markdown'
-import { themes, whiteTheme, ThemesHarmonies } from './theme'
+import {
+  ColorHarmoniesMarkdown,
+  DarkenLightenMarkdown,
+  Markdown,
+  OverviewMarkdown,
+} from "./markdown/Markdown";
+import { themes, whiteTheme, ThemesHarmonies } from "./theme";
 
 const getHueSaturationAndLightness = (value: string) => {
   const [hue, saturation, lightness] = hexToHsl(value);

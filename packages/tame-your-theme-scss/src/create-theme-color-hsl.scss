@@ -1,16 +1,16 @@
 $default-hover: 0.5;
 
-@mixin create-theme-color-complimentary(
+@mixin create-theme-color-complementary(
   $color-name,
   $color-value,
   $hover: $default-hover
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
 
-  $complimentary-factor: 180deg;
+  $complementary-factor: 180deg;
 
-  #{$color-name}-complimentary: hsl(
-    calc(var(#{$color-name + "-h"}) - $complimentary-factor),
+  #{$color-name}-complementary: hsl(
+    calc(var(#{$color-name + "-h"}) - $complementary-factor),
     var(#{$color-name + "-s"}),
     calc(var(#{$color-name + "-l"}))
   );
@@ -81,18 +81,18 @@ $analogous-factors: (
   @include create-theme-by-factors($color-name, $analogous-factors);
 }
 
-$split-complimentary-factors: (
-  "split-complimentary-second-hue": -150deg,
-  "split-complimentary-third-hue": 150deg,
+$split-complementary-factors: (
+  "split-complementary-second-hue": -150deg,
+  "split-complementary-third-hue": 150deg,
 );
 
-@mixin create-theme-color-split-complimentary(
+@mixin create-theme-color-split-complementary(
   $color-name,
   $color-value,
   $hover: $default-hover
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
-  @include create-theme-by-factors($color-name, $split-complimentary-factors);
+  @include create-theme-by-factors($color-name, $split-complementary-factors);
 }
 
 @mixin create-theme-color($color-name, $color-value, $hover: $default-hover) {
@@ -113,10 +113,10 @@ $split-complimentary-factors: (
 }
 
 @mixin create-theme-by-hue($hue) {
-  $complimentary-factor: 180;
+  $complementary-factor: 180;
 
   --hue: #{$hue};
-  --complimentary-hue: calc(var(--hue) - 180);
+  --complementary-hue: calc(var(--hue) - 180);
 
   $common-hue-saturation: 25;
 
@@ -131,7 +131,7 @@ $split-complimentary-factors: (
     #{$common-hue-saturation + "%"}
   );
   --button-background: hsl(
-    var(--complimentary-hue),
+    var(--complementary-hue),
     #{$common-hue-saturation + "%"},
     #{$common-hue-saturation * 2 + "%"}
   );

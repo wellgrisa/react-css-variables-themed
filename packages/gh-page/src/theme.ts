@@ -1,4 +1,4 @@
-import { ThemeAttribute } from 'tame-your-theme/lib/models'
+import { ThemeAttribute } from "tame-your-theme-css-declaration";
 
 export enum ThemesHarmonies {
   Dark = "dark",
@@ -34,7 +34,7 @@ export const whiteTheme = [
     value: yellowPrimaryColor,
   },
   {
-    name: "primary-color-split-complimentary",
+    name: "primary-color-split-complementary",
     value: yellowPrimaryColor,
   },
 ];
@@ -65,7 +65,7 @@ const darkTheme = [
     value: pinkPrimaryColor,
   },
   {
-    name: "primary-color-split-complimentary",
+    name: "primary-color-split-complementary",
     value: pinkPrimaryColor,
   },
 ];
