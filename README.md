@@ -1,6 +1,6 @@
 # Tame Your Theme
 
-![example workflow](https://github.com/wellgrisa/react-css-variables-themed/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/wellgrisa/react-css-variables-themed/actions/workflows/main.yml/badge.svg?branch=main)
 
 ## Overview
 
