@@ -13,7 +13,7 @@ jobs:
         run: yarn bootstrap
 
       - name: tame-your-theme/css-style-declaration test
-        run: yarn css-style-declarationa test
+        run: yarn css-style-declaration test
 
       - name: tame-your-theme/scss test
         run: yarn scss test
