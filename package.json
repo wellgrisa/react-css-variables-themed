@@ -6,9 +6,10 @@
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
   "scripts": {
+    "bootstrap": "yarn lerna bootstrap",
     "reset": "rm -r node_modules && yarn && yarn lerna clean -y && yarn lerna bootstrap --loglevel=all",
-    "tame": "cd packages/css-style-declaration && yarn",
-    "tame-scss": "cd packages/scss && yarn"
+    "css-style-declaration": "cd packages/css-style-declaration && yarn",
+    "scss": "cd packages/scss && yarn"
   },
   "author": "",
   "license": "ISC",
