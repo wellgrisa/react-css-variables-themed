@@ -10,11 +10,16 @@ $default-hover: 0.5;
   $complementary-factor: 180deg;
 
   #{$color-name}-complementary: hsl(
-    calc(var(#{$color-name + "-h"}) - $complementary-factor),
+    calc(var(#{$color-name + "-h"}) + $complementary-factor),
     var(#{$color-name + "-s"}),
     calc(var(#{$color-name + "-l"}))
   );
 }
+
+$triadic-factors: (
+  "triadic-second-hue": 120deg,
+  "triadic-third-hue": 240deg,
+);
 
 @mixin create-theme-color-triadic(
   $color-name,
@@ -22,20 +27,14 @@ $default-hover: 0.5;
   $hover: $default-hover
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
-
-  $triadic-factor: 120deg;
-
-  #{$color-name}-triadic-second-hue: hsl(
-    calc(var(#{$color-name + "-h"}) + $triadic-factor),
-    var(#{$color-name + "-s"}),
-    calc(var(#{$color-name + "-l"}))
-  );
-  #{$color-name}-triadic-third-hue: hsl(
-    calc(var(#{$color-name + "-h"}) + $triadic-factor * 2),
-    var(#{$color-name + "-s"}),
-    calc(var(#{$color-name + "-l"}))
-  );
+  @include create-theme-by-factors($color-name, $triadic-factors);
 }
+
+$tetradic-factors: (
+  "tetradic-second-hue": 30deg,
+  "tetradic-third-hue": 180deg,
+  "tetradic-fourth-hue": 210deg,
+);
 
 @mixin create-theme-color-tetradic(
   $color-name,
@@ -43,26 +42,7 @@ $default-hover: 0.5;
   $hover: $default-hover
 ) {
   @include create-theme-color($color-name, $color-value, $hover);
-
-  $tetradic-second-color: calc(var(#{$color-name + "-h"}) + 30deg);
-  $tetradic-third-color: calc(var(#{$color-name + "-h"}) + 180deg);
-  $tetradic-fourth-color: calc($tetradic-second-color + 180deg);
-
-  #{$color-name}-tetradic-second-hue: hsl(
-    $tetradic-second-color,
-    var(#{$color-name + "-s"}),
-    calc(var(#{$color-name + "-l"}))
-  );
-  #{$color-name}-tetradic-third-hue: hsl(
-    $tetradic-third-color,
-    var(#{$color-name + "-s"}),
-    calc(var(#{$color-name + "-l"}))
-  );
-  #{$color-name}-tetradic-fourth-hue: hsl(
-    $tetradic-fourth-color,
-    var(#{$color-name + "-s"}),
-    calc(var(#{$color-name + "-l"}))
-  );
+  @include create-theme-by-factors($color-name, $tetradic-factors);
 }
 
 $analogous-factors: (
@@ -109,31 +89,6 @@ $split-complementary-factors: (
     var(#{$color-name + "-s"}),
     var(#{$color-name + "-l"}),
     $hover
-  );
-}
-
-@mixin create-theme-by-hue($hue) {
-  $complementary-factor: 180;
-
-  --hue: #{$hue};
-  --complementary-hue: calc(var(--hue) - 180);
-
-  $common-hue-saturation: 25;
-
-  --background-color: hsl(
-    var(--hue),
-    #{$common-hue-saturation + "%"},
-    #{$common-hue-saturation * 2 + "%"}
-  );
-  --background-color-dark: hsl(
-    var(--hue),
-    #{$common-hue-saturation + "%"},
-    #{$common-hue-saturation + "%"}
-  );
-  --button-background: hsl(
-    var(--complementary-hue),
-    #{$common-hue-saturation + "%"},
-    #{$common-hue-saturation * 2 + "%"}
   );
 }
 
