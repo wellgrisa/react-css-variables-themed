@@ -1,4 +1,4 @@
-import type { Config } from '@jest/types'
+import type { Config } from '@jest/types';
 
 const config: Config.InitialOptions = {
   verbose: true,
@@ -8,6 +8,7 @@ const config: Config.InitialOptions = {
   collectCoverage: true,
   coverageReporters: ['json-summary'],
   testEnvironment: 'jsdom',
+  modulePathIgnorePatterns: ['lib'],
 }
 
 export default config

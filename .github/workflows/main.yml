@@ -1,13 +1,6 @@
-
 name: CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  workflow_dispatch:
+on: [push]
 
 jobs:
   test:
@@ -21,5 +14,8 @@ jobs:
       - name: lerna bootstrap
         run: yarn bootstrap
 
-      - name: Run a multi-line script
+      - name: tame-your-theme/css-style-declaration test 
         run: yarn css-style-declaration test
+
+      - name: tame-your-theme/scss test 
+        run: yarn scss test

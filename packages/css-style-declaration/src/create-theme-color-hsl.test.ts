@@ -28,7 +28,7 @@ describe('create-theme-color-hsl', () => {
         getHueSaturationAndLightness: mockGetHueSaturationAndLightness,
       })
 
-      expect(mockedSetDocumentProperty).toHaveBeenCalledWith(`--${mockedName}-h`, mockedHue)
+      expect(mockedSetDocumentProperty).toHaveBeenCalledWith(`--${mockedName}-h`, `${mockedHue}deg`)
       expect(mockedSetDocumentProperty).toHaveBeenCalledWith(`--${mockedName}-s`, `${mockedSaturation}%`)
       expect(mockedSetDocumentProperty).toHaveBeenCalledWith(`--${mockedName}-l`, `${mockedLightness}%`)
     })
