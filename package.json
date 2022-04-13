@@ -7,8 +7,8 @@
   "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
   "scripts": {
     "reset": "rm -r node_modules && yarn && yarn lerna clean -y && yarn lerna bootstrap --loglevel=all",
-    "tame": "cd packages/tame-your-theme && yarn",
-    "tame-scss": "cd packages/tame-your-theme-scss && yarn"
+    "tame": "cd packages/css-style-declaration && yarn",
+    "tame-scss": "cd packages/scss && yarn"
   },
   "author": "",
   "license": "ISC",
