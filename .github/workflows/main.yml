@@ -15,10 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: yarn i
+      - name: yarn 
         run: yarn
+        
+      - name: lerna bootstrap
+        run: yarn bootstrap
 
-      # Runs a set of commands using the runners shell
       - name: Run a multi-line script
-        run: yarn tame test
+        run: yarn css-style-declaration test
