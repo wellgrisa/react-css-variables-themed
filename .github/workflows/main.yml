@@ -6,14 +6,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: yarn 
+      - name: yarn
         run: yarn
-        
+
       - name: lerna bootstrap
         run: yarn bootstrap
 
-      - name: tame-your-theme/css-style-declaration test 
-        run: yarn css-style-declaration test
+      - name: tame-your-theme/css-style-declaration test
+        run: yarn css-style-declarationa test
 
-      - name: tame-your-theme/scss test 
+      - name: tame-your-theme/scss test
         run: yarn scss test
