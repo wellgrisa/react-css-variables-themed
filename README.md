@@ -1,6 +1,6 @@
 # Tame Your Theme
 
-[![https://github.com/wellgrisa/react-css-variables-themed/workflows/.github/workflows/main.yml/badge.svg](https://github.com/wellgrisa/react-css-variables-themed/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/wellgrisa/react-css-variables-themed/actions/workflows/main.yml)
+[![https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg](https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/wellgrisa/tame-your-theme/actions/workflows/main.yml)
 
 ## Overview
 
@@ -11,7 +11,7 @@ To achieve that, this lib is split in two packages:
 - `@tame-your-theme/scss` - scss helper functions to create css variable colors
 - `@tame-your-theme/css-style-declaration` - css style declarations function helpers
 
-For the [full and interactive documentation go here](https://wellgrisa.github.io/react-css-variables-themed/).
+For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
 
 ## Installation
 
