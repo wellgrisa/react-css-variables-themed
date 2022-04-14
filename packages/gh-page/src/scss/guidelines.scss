@@ -6,7 +6,7 @@ $unitFactorNormal: 4;
 $unitFactorLarge: 8;
 $unitFactorHuge: 16;
 
-$hair: $baseFactor / $unitFactorSmall; // 3
+$hair: calc($baseFactor / $unitFactorSmall); // 3
 $tiny: $baseFactor * $unitFactorTiny; // 6
 $small: $baseFactor * $unitFactorSmall; // 12
 $normal: $baseFactor * $unitFactorNormal; // 24
