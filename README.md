@@ -36,3 +36,7 @@ How to use in just a few steps:
 - create the themed colors by using the mixin `create-theme-color` from the `@tame-your-theme/scss`
 - create the themes using a list of names and values in your javascript preferred language (typescript, vanilla, react, angular...)
 - call the `setTheme` from the `@tame-your-theme/css-style-declaration` with the desired theme
+
+Each package might be used independently, though they are thought of being used together.
+
+For more details check each package's Readme, but mostly the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).

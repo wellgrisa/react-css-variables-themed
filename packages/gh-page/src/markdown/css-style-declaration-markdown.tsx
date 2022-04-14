@@ -6,7 +6,6 @@ export const cssStyleDeclarationMarkdown = `***
 
 Changes the theme according to the given variables. This method uses the [native css set property method](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty) to change the css variable.
 
-
 This method accepts two arguments:
 
 \`\`\`ts
@@ -28,5 +27,5 @@ export type GetHueSaturationAndLightnessType = (value: string) => {
 }
 \`\`\`
 
-In the example below the lib being used to get these values is [hex-to-hsl](https://www.npmjs.com/package/hex-to-hsl), but one can use any lib or even create the logic to get the values from a hexadecimal color. The following example uses the \`setTheme\` function to change the theme dynamically. To achieve this change, it's necessary to have a proper css set in place in the components.
+In the example shown in the commence of this document the lib being used to get these values is [hex-to-hsl](https://www.npmjs.com/package/hex-to-hsl), but one can use any lib or even create the logic to get the values from a hexadecimal color. The following example uses the \`setTheme\` function to change the theme dynamically. To achieve this change, it's necessary to have a proper css set in place in the components.
 `;
