@@ -4,7 +4,7 @@
 ![Statements](https://img.shields.io/badge/statements-94.44%25-brightgreen.svg?style=flat)
 ![Lines](https://img.shields.io/badge/lines-95.23%25-brightgreen.svg?style=flat)
 
-## Overview
+# Overview
 
 For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
 
@@ -17,7 +17,7 @@ To achieve that, this lib is split in two packages:
 
 Each package might be used independently, though they are thought of being used together.
 
-## Installation
+# Installation
 
 Using npm:
 
@@ -33,7 +33,7 @@ yarn add @tame-your-theme/css-style-declaration
 yarn add @tame-your-theme/scss
 ```
 
-## TL;DR
+# TL;DR
 
 How to use in just a few steps:
 
@@ -43,7 +43,7 @@ How to use in just a few steps:
 
 ---
 
-# The package \`@tame-your-theme/css-style-declaration\`
+# The package `@tame-your-theme/css-style-declaration`
 
 ## setTheme
 
@@ -58,7 +58,7 @@ export interface Theme {
 }
 ```
 
-Following some principles from the [Clean Architecture](https://www.amazon.com.br/dp/B075LRM681/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) this lib aims to be dependencyless and this can be seen particularly in the parameter \`getHueSaturationAndLightness\`.
+Following some principles from the [Clean Architecture](https://www.amazon.com.br/dp/B075LRM681/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) this lib aims to be dependencyless and this can be seen particularly in the parameter `getHueSaturationAndLightness`.
 
 The idea of this method is basically avoid an extra dependency, so it receives a function which needs to return the specific values used in the lib.
 
@@ -70,4 +70,4 @@ export type GetHueSaturationAndLightnessType = (value: string) => {
 }
 ```
 
-In the example shown in the commence of this document the lib being used to get these values is [hex-to-hsl](https://www.npmjs.com/package/hex-to-hsl), but one can use any lib or even create the logic to get the values from a hexadecimal color. The following example uses the \`setTheme\` function to change the theme dynamically. To achieve this change, it's necessary to have a proper css set in place in the components.
+In the example shown in the the [documentation](https://wellgrisa.github.io/tame-your-theme/) the lib being used to get these values is [hex-to-hsl](https://www.npmjs.com/package/hex-to-hsl), but one can use any lib or even create the logic to get the values from a hexadecimal color. The following example uses the `setTheme` function to change the theme dynamically. To achieve this change, it's necessary to have a proper css set in place in the components.

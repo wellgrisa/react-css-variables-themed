@@ -2,7 +2,7 @@
 
 [![https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg](https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/wellgrisa/tame-your-theme/actions/workflows/main.yml) [![Npm package version](https://badgen.net/npm/v/@tame-your-theme/scss)](https://www.npmjs.com/package/@tame-your-theme/scss)
 
-## Overview
+# Overview
 
 For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
 
@@ -15,7 +15,7 @@ To achieve that, this lib is split in two packages:
 
 Each package might be used independently, though they are thought of being used together.
 
-## Installation
+# Installation
 
 Using npm:
 
@@ -31,7 +31,7 @@ yarn add @tame-your-theme/css-style-declaration
 yarn add @tame-your-theme/scss
 ```
 
-## TL;DR
+# TL;DR
 
 How to use in just a few steps:
 
@@ -41,7 +41,7 @@ How to use in just a few steps:
 
 ---
 
-# The package \`tame-your-theme/scss\`
+# The package `tame-your-theme/scss`
 
 ## Why [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) ?
 
