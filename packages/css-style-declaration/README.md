@@ -1,6 +1,8 @@
 # Tame Your Theme
 
-[![https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg](https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/wellgrisa/tame-your-theme/actions/workflows/main.yml)
+[![https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg](https://github.com/wellgrisa/tame-your-theme/workflows/.github/workflows/main.yml/badge.svg)](https://github.com/wellgrisa/tame-your-theme/actions/workflows/main.yml) [![Npm package version](https://badgen.net/npm/v/@tame-your-theme/css-style-declaration)](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration)
+![Statements](https://img.shields.io/badge/statements-94.44%25-brightgreen.svg?style=flat)
+![Lines](https://img.shields.io/badge/lines-95.23%25-brightgreen.svg?style=flat)
 
 ## Overview
 
