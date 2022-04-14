@@ -1,6 +1,6 @@
 {
   "name": "@tame-your-theme/scss",
-  "version": "0.0.5",
+  "version": "0.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/tame-your-theme",
