@@ -7,6 +7,8 @@ To achieve that, this lib is split in two packages:
 * \`@tame-your-theme/scss\` - scss helper functions to create css variable colors 
 * \`@tame-your-theme/css-style-declaration\` - css style declarations function helpers
 
+Each package might be used independently, though they are thought of being used together.
+
 ## Installation
 
 Using npm:
