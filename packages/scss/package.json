@@ -1,6 +1,6 @@
 {
   "name": "@tame-your-theme/scss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
