@@ -1,6 +1,6 @@
 {
   "name": "@tame-your-theme/scss",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
@@ -26,12 +26,12 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "glob": "^7.2.0",
-    "path": "^0.12.7",
     "jest": "^27.5.1",
+    "path": "^0.12.7",
     "sass": "^1.49.9",
     "sass-true": "^6.1.0",
-    "typescript": "^4.6.3",
     "ts-jest": "^27.1.4",
-    "ts-node": "^10.7.0"
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   }
 }

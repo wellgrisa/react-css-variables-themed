@@ -1,9 +1,11 @@
 {
   "name": "gh-page",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "homepage": ".",
   "dependencies": {
+    "@tame-your-theme/css-style-declaration": "^0.0.1",
+    "@tame-your-theme/scss": "^0.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -19,8 +21,6 @@
     "react-markdown": "^8.0.2",
     "react-scripts": "5.0.0",
     "sass": "^1.49.11",
-    "@tame-your-theme/css-style-declaration": "^0.0.0",
-    "@tame-your-theme/scss": "^0.0.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },

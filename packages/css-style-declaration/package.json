@@ -1,6 +1,6 @@
 {
   "name": "@tame-your-theme/css-style-declaration",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
@@ -30,8 +30,8 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
     "jest": "^27.5.1",
-    "typescript": "^4.6.3",
     "ts-jest": "^27.1.4",
-    "ts-node": "^10.7.0"
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
   }
 }
