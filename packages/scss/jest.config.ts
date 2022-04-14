@@ -7,6 +7,7 @@ const config: Config.InitialOptions = {
   collectCoverage: true,
   coverageReporters: ["json-summary"],
   testEnvironment: "jsdom",
+  modulePathIgnorePatterns: ["lib"],
 };
 
 export default config;
