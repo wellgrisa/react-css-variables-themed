@@ -10,11 +10,11 @@
     "test": "jest",
     "test-watch": "jest --watchAll"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^4.6.3"
-  },
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -30,6 +30,7 @@
     "jest": "^27.5.1",
     "sass": "^1.49.9",
     "sass-true": "^6.1.0",
+    "typescript": "^4.6.3",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0"
   }

@@ -11,6 +11,8 @@ To achieve that, this lib is split in two packages:
 - `@tame-your-theme/scss` - scss helper functions to create css variable colors
 - `@tame-your-theme/css-style-declaration` - css style declarations function helpers
 
+For the [full and interactive documentation go here](https://wellgrisa.github.io/react-css-variables-themed/).
+
 ## Installation
 
 Using npm:
@@ -34,5 +36,3 @@ How to use in just a few steps:
 - create the themed colors by using the mixin `create-theme-color` from the `@tame-your-theme/scss`
 - create the themes using a list of names and values in your javascript preferred language (typescript, vanilla, react, angular...)
 - call the `setTheme` from the `@tame-your-theme/css-style-declaration` with the desired theme
-
-For the [full and interactive documentation go here](https://wellgrisa.github.io/react-css-variables-themed/).

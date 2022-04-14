@@ -1,10 +1,10 @@
 {
-  "name": "react-theme-css-variable",
-  "version": "1.0.0",
+  "name": "tame-your-theme",
+  "version": "0.0.0",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "homepage": "https://wellgrisa.github.io/react-css-variables-themed",
+  "homepage": "https://wellgrisa.github.io/tame-your-theme",
   "scripts": {
     "bootstrap": "yarn lerna bootstrap",
     "reset": "rm -r node_modules && yarn && yarn lerna clean -y && yarn lerna bootstrap --loglevel=all",
