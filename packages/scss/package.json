@@ -16,6 +16,17 @@
     "access": "public"
   },
   "author": "",
+  "keywords": [
+    "theme",
+    "scss",
+    "css",
+    "react",
+    "preact",
+    "angular",
+    "vanilla",
+    "colors",
+    "native"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.1",

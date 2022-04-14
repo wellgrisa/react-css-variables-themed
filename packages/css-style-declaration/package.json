@@ -17,6 +17,17 @@
     "access": "public"
   },
   "author": "",
+  "keywords": [
+    "theme",
+    "scss",
+    "css",
+    "react",
+    "preact",
+    "angular",
+    "vanilla",
+    "colors",
+    "native"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^6.1.1",
