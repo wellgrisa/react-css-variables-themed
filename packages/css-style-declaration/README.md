@@ -4,14 +4,14 @@
 
 ## Overview
 
+For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
+
 The main idea of this lib is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors and the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model) to change the css variables in runtime.
 
 To achieve that, this lib is split in two packages:
 
 - `@tame-your-theme/scss` - scss helper functions to create css variable colors
 - `@tame-your-theme/css-style-declaration` - css style declarations function helpers
-
-For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
 
 ## Installation
 
