@@ -10,8 +10,8 @@ The main idea of this lib is to help creating themes by using [CSS custom variab
 
 To achieve that, this lib is split in two packages:
 
-- `@tame-your-theme/scss` - scss helper functions to create themed css variable colors, themed color harmonies
-- `@tame-your-theme/css-style-declaration` - native css style declarations api helper to change theme in run time
+- [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) - scss helper functions to create themed css variable colors, themed color harmonies
+- [`@tame-your-theme/css-style-declaration`](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration) - native css style declarations api helper to change theme in run timetheme in run time
 
 Each package might be used independently, though they are thought of being used together.
 
