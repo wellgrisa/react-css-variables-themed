@@ -27,7 +27,7 @@ jobs:
     name: Version
     runs-on: ubuntu-latest
     needs: test
-    if: github.event.pull_request.merged == 'true'
+    if: github.ref_name == 'main'
     steps:
       - uses: actions/checkout@v3
         with:
