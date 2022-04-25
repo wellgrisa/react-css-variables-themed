@@ -12,6 +12,7 @@ import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Markdown } from './markd
 import { scssMarkdown } from './markdown/scss-markdown'
 import { overviewMarkdown, tldrMarkdown } from './markdown/tlrl-markdown'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
+import { CssStyleDeclarationIndependently } from './ThemedDiv/CssStyleDeclarationIndependently'
 import { ThemedDiv } from './ThemedDiv/ThemedDiv'
 
 const getHueSaturationAndLightness = (value: string) => {
@@ -68,11 +69,11 @@ export default function App() {
           </label>
         </Row>
       </div>
-
       <Markdown>{overviewMarkdown}</Markdown>
       <ThemedDiv />
       <Markdown>{tldrMarkdown}</Markdown>
       <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
+      <CssStyleDeclarationIndependently />
       <Markdown>{scssMarkdown}</Markdown>
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
