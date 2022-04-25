@@ -73,4 +73,10 @@
   border-radius: $small;
   padding: $small;
   margin-top: $normal;
+
+  .custom-checkbox-container {
+    input:checked ~ .checkmark {
+      background-color: var(--independently-primary-color);
+    }
+  }
 }
