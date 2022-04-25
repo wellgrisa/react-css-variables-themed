@@ -1,23 +1,7 @@
 @import "~@tame-your-theme/scss";
 @import "./guidelines.scss";
 @import "./custom-checkbox.scss";
-
-$grey-50: #fafafa;
-$grey-60: #a0a0a0;
-$grey-70: #a1a1a4;
-$grey-100: #f5f5f5;
-$grey-200: #eeeeee;
-$grey-300: #e0e0e0;
-$grey-400: #bdbdbd;
-$grey-500: #9e9e9e;
-$grey-600: #757575;
-$grey-700: #616161;
-$grey-800: #424242;
-$grey-900: #212121;
-$grey-A100: #d5d5d5;
-$grey-A200: #aaaaaa;
-$grey-A400: #303030;
-$grey-A700: #616161;
+@import "./palette.scss";
 
 :root {
   @include create-theme-color(--black-text-color, #24292f);
@@ -41,15 +25,6 @@ $grey-A700: #616161;
     --complementary-primary-color,
     #00ffff
   );
-  @include create-theme-color(--themed-div-background-color, #ffffff);
-  @include create-theme-color(
-    --themed-div-background-contrast-color,
-    $grey-900
-  );
-  @include create-theme-color-complementary(
-    --themed-div-primary-color,
-    #ffa500
-  );
 }
 
 %theme-presenter-container {
@@ -69,6 +44,21 @@ $grey-A700: #616161;
 }
 
 body {
+  .sticky {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background: var(--background-color);
+    padding-top: $small;
+    padding-bottom: $normal;
+    margin-bottom: $normal;
+    border-bottom: 1px solid hsla(210, 18%, 87%, 1);
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
   background-color: var(--background-color);
   color: var(--background-contrast-color);
   margin: $normal 20%;
@@ -152,47 +142,6 @@ body {
     hr {
       margin-top: $large;
       margin-bottom: $large;
-    }
-  }
-
-  .themed {
-    text-align: center;
-    background-color: var(--themed-div-background-color);
-    color: var(--themed-div-background-contrast-color);
-
-    h1 {
-      color: var(--themed-div-primary-color);
-      border-bottom: none;
-    }
-
-    label {
-      cursor: pointer;
-
-      input {
-        margin-right: $tiny;
-        margin-top: $normal;
-      }
-    }
-
-    border: 1px solid
-      change-lightness(--themed-div-background-contrast-color, 80%);
-    border-radius: $small;
-    padding: $small;
-    margin-top: $normal;
-  }
-
-  .sticky {
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    background: var(--background-color);
-    padding-top: $small;
-    padding-bottom: $normal;
-    margin-bottom: $normal;
-    border-bottom: 1px solid hsla(210, 18%, 87%, 1);
-
-    h1 {
-      margin-top: 0;
     }
   }
 
@@ -292,66 +241,4 @@ body {
 
     border: 1px solid change-lightness(--background-contrast-color, 60%);
   }
-
-  // [data-theme="complementary-theme"] {
-  //   @include create-theme-color-complementary(--primary-color, #00ffff);
-  //   @include create-theme-color-complementary(--background-color, #708090);
-
-  //   @extend %theme-presenter-container;
-
-  //   h1 {
-  //     color: var(--primary-color);
-
-  //     &:hover {
-  //       color: var(--primary-color-hover);
-  //       cursor: pointer;
-  //     }
-  //   }
-
-  //   h2 {
-  //     color: var(--primary-color-complementary);
-  //   }
-  // }
-
-  // [data-theme="theme-by-hue"] {
-  //   @include create-theme-by-hue(257);
-
-  //   @extend %theme-presenter-container;
-
-  //   h1 {
-  //     color: var(--complementary-hue);
-  //   }
-
-  //   h2 {
-  //     color: var(--background-color-dark);
-  //   }
-
-  //   h3 {
-  //     color: var(--hue);
-  //   }
-  // }
-
-  // [data-theme="triadic-theme"] {
-  //   @include create-theme-color-triadic(--primary-color, #00ffff);
-  //   @include create-theme-color-complementary(--background-color, #708090);
-
-  //   @extend %theme-presenter-container;
-
-  //   h1 {
-  //     color: var(--primary-color);
-
-  //     &:hover {
-  //       color: var(--primary-color-hover);
-  //       cursor: pointer;
-  //     }
-  //   }
-
-  //   h2 {
-  //     color: var(--primary-color-triadic-first-hue);
-  //   }
-
-  //   h3 {
-  //     color: var(--primary-color-triadic-second-hue);
-  //   }
-  // }
 }

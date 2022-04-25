@@ -71,3 +71,30 @@ export type GetHueSaturationAndLightnessType = (value: string) => {
 ```
 
 In the example shown in the the [documentation](https://wellgrisa.github.io/tame-your-theme/) the lib being used to get these values is [hex-to-hsl](https://www.npmjs.com/package/hex-to-hsl), but one can use any lib or even create the logic to get the values from a hexadecimal color. The following example uses the `setTheme` function to change the theme dynamically. To achieve this change, it's necessary to have a proper css set in place in the components.
+
+# Using only this package
+
+```scss
+:root {
+  --primary-color-h: 39deg;
+  --primary-color-s: 100%;
+  --primary-color-l: 50%;
+  --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+
+  --background-color-h: 0deg;
+  --background-color-s: 0%;
+  --background-color-l: 100%;
+  --background-color: hsl(var(--background-color-h), var(--background-color-s), var(--background-color-l));
+
+  --background-contrast-color-h: 0deg;
+  --background-contrast-color-s: 0%;
+  --background-contrast-color-l: 13%;
+  --background-contrast-color: hsl(
+    var(--background-contrast-color-h),
+    var(--background-contrast-color-s),
+    var(--background-contrast-color-l)
+  );
+}
+```
+
+After creating these variables, it's just a matter of calling the `setThemes`.
