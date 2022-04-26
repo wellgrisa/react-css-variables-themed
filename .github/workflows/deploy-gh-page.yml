@@ -1,0 +1,16 @@
+on:
+  push:
+    paths: ["packages/gh-page/**/*"]
+
+jobs:
+  deploy-gh-page:
+    name: Deploy GH Page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Deploy"
+        run: |
+          cd packages/gh-page
+          yarn
+          yarn deploy
