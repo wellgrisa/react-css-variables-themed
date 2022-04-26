@@ -4,7 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@tame-your-theme/css-style-declaration": "^0.1.2",
+    "@tame-your-theme/css-style-declaration": "^0.1.1",
     "@tame-your-theme/scss": "^0.1.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",

@@ -1,7 +1,7 @@
 {
   "name": "@tame-your-theme/css-style-declaration",
   "description": "native css style declarations api helper to change theme in run time and to tame your theme",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://wellgrisa.github.io/tame-your-theme",

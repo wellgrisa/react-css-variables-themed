@@ -1,9 +1,9 @@
-import './css-style-independently.scss'
+import "./css-style-independently.scss";
 
-import hexToHsl from 'hex-to-hsl'
-import { useEffect, useState } from 'react'
+import hexToHsl from "hex-to-hsl";
+import { useEffect, useState } from "react";
 
-import { setTheme } from '@tame-your-theme/css-style-declaration'
+import { setTheme } from "@tame-your-theme/css-style-declaration";
 
 export const whiteTheme = [
   {
@@ -66,7 +66,6 @@ export const CssStyleDeclarationIndependently = () => {
         <span className="checkmark"></span>
         Fancy a dark theme?
       </label>
-
       <h1>Title using var(--independently-primary-color)</h1>
     </div>
   );
