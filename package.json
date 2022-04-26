@@ -9,12 +9,16 @@
     "bootstrap": "yarn lerna bootstrap",
     "reset": "rm -r node_modules && yarn && yarn lerna clean -y && yarn lerna bootstrap --loglevel=all",
     "css-style-declaration": "cd packages/css-style-declaration && yarn",
-    "scss": "cd packages/scss && yarn"
+    "scss": "cd packages/scss && yarn",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^7.0.4",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/config-lerna-scopes": "^16.2.2",
+    "husky": "^7.0.0",
     "lerna": "^4.0.0",
     "lint-staged": "^12.3.7"
   }
