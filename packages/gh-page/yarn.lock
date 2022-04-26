@@ -1570,15 +1570,10 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
-"@tame-your-theme/css-style-declaration@0.0.4-alpha.0":
-  version "0.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/@tame-your-theme/css-style-declaration/-/css-style-declaration-0.0.4-alpha.0.tgz#90b1bae56e2de5f7632323e14cd3a6bb9bb79c28"
-  integrity sha512-jZfcgwfQylvqK1nza82mr3DZ6FM9Xk4Gl/57ZKsSxMq9vWirxUfKGVvlDfw4UO1zhi0rKe5uSPqFsK5jBXWaXA==
-
-"@tame-your-theme/scss@0.0.4-alpha.0":
-  version "0.0.4-alpha.0"
-  resolved "https://registry.yarnpkg.com/@tame-your-theme/scss/-/scss-0.0.4-alpha.0.tgz#d5fde3bb921f4991f74761100f3dff102094c4f6"
-  integrity sha512-cKyFeZED+gTJPtbYmhPIM09UK87YRIeOL6jEX+vwBDruASL1PtkBfaYe2eiB0Uv8py/3Mo4kcUBpHKogg/tITg==
+"@tame-your-theme/scss@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@tame-your-theme/scss/-/scss-0.1.1.tgz#dd730534540c42f6c00ed676eb00bc57fb1be663"
+  integrity sha512-eAyf/IqrwFDQ4nUhX5+hbI7yaSWW/FVZu9CjB74JXuQGsgypHSA60BgwfD49sXqCTcBgn2jL1FRihlJ2UgRoog==
 
 "@testing-library/dom@^8.0.0":
   version "8.12.0"
