@@ -13,6 +13,10 @@ To achieve that, this lib is split in two packages:
 - `@tame-your-theme/scss` - scss helper functions to create themed css variable colors, themed color harmonies
 - `@tame-your-theme/css-style-declaration` - native css style declarations api helper to change theme in run time
 
+Each package can be used independently.
+
+If you don't need to change in run time, you can just use the [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) to create your variables and play with its colors easily.
+
 ## Installation
 
 Using npm:

@@ -7,7 +7,9 @@ To achieve that, this lib is split in two packages:
 - [\`@tame-your-theme/scss\`](https://www.npmjs.com/package/@tame-your-theme/scss) - scss helper functions to create themed css variable colors, themed color harmonies
 - [\`@tame-your-theme/css-style-declaration\`](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration) - native css style declarations api helper to change theme in run time
 
-Each package might be used independently, though they are thought of being used together.
+The idea of this document is to show how to setup and change themes in run time, but each package can be used independently. 
+
+If you don't need to change in run time, you can just use the [\`@tame-your-theme/scss\`](https://www.npmjs.com/package/@tame-your-theme/scss) to create your variables and play with its colors easily.
 
 ## Installation
 
@@ -33,7 +35,7 @@ How to use in just a few steps:
 
 * create the themed colors by using the mixin \`create-theme-color\` from the \`@tame-your-theme/scss\`
 * create the themes using a list of names and values in your javascript preferred language (typescript, vanilla, react, angular...)
-* call the \`setTheme\` from the \`@tame-your-theme/css-style-declaration\` with the desired theme
+* call the \`setTheme\` from the \`@tame-your-theme/css-style-declaration\` with the desired theme 
 
 The component below is an example in React, however it's not necessary as the \`setTheme\` function uses [native code from the browser](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty).
 `;

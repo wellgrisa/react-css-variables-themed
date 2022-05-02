@@ -1,3 +1,4 @@
-# Example
+## CRA to have an interactive documentation for the libs:
 
-This is a simple CRA project to implement the (interactive documentation)[https://wellgrisa.github.io/tame-your-theme] for the package tame-your-theme.
+- [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) - scss helper functions to create themed css variable colors, themed color harmonies
+- [`@tame-your-theme/css-style-declaration`](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration) - native css style declarations api helper to change theme in runtime
