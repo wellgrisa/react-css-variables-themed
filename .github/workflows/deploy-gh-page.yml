@@ -9,12 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install and Build 🔧
+      - name: Install and Build
         run: |
           cd packages/gh-page
           yarn
+          yarn build
 
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages
