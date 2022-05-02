@@ -1,0 +1,244 @@
+@import "~@tame-your-theme/scss";
+@import "./guidelines.scss";
+@import "./custom-checkbox.scss";
+@import "./palette.scss";
+
+:root {
+  @include create-theme-color(--black-text-color, #24292f);
+  @include create-theme-color(--markdown-keyword, #ff00ff);
+  @include create-theme-color(--markdown-comment, #3cb371);
+  @include create-theme-color(--h3-title, #ff4500);
+  @include create-theme-color(--markdown-string, #d2691e);
+  @include create-theme-color(--markdown-attribute, #6495ed);
+  @include create-theme-color(--markdown-function, #ff8c00);
+  @include create-theme-color(--background-color, #ffffff);
+  @include create-theme-color(--background-contrast-color, $grey-900);
+  @include create-theme-color-complementary(--primary-color, #ffa500);
+  @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
+  @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
+  @include create-theme-color-analogous(--primary-color-analogous, #ffa500);
+  @include create-theme-color-split-complementary(
+    --primary-color-split-complementary,
+    #ffa500
+  );
+  @include create-theme-color-complementary(
+    --complementary-primary-color,
+    #00ffff
+  );
+}
+
+%theme-presenter-container {
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 10px auto;
+  min-width: 500px;
+}
+
+.color-theme-in-transition,
+.color-theme-in-transition *,
+.color-theme-in-transition * > *,
+.color-theme-in-transition *:before,
+.color-theme-in-transition *:after {
+  transition: all 250ms;
+  transition-delay: 0;
+}
+
+body {
+  .sticky {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background: var(--background-color);
+    padding-top: $small;
+    padding-bottom: $normal;
+    margin-bottom: $normal;
+    border-bottom: 1px solid hsla(210, 18%, 87%, 1);
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  background-color: var(--background-color);
+  color: var(--background-contrast-color);
+  margin: $normal 20%;
+
+  .markdown-body {
+    background-color: var(--background-color);
+    color: var(--background-contrast-color);
+
+    .hljs:not(.language-sql) {
+      .hljs-keyword {
+        color: var(--markdown-keyword);
+      }
+    }
+
+    .hljs-string,
+    .hljs-selector-pseudo,
+    .hljs-selector-tag,
+    .hljs-selector-class {
+      color: var(--markdown-string);
+    }
+
+    .hljs-title.function_ {
+      color: var(--markdown-function);
+    }
+
+    .hljs-comment {
+      color: var(--markdown-comment);
+    }
+
+    .hljs-attribute,
+    .hljs-attr,
+    .hljs-params,
+    .hljs .xml {
+      color: var(--markdown-attribute);
+    }
+
+    h3 {
+      color: var(--h3-title);
+      padding-bottom: $small;
+
+      &:hover {
+        color: var(--h3-title-hover);
+      }
+
+      border-bottom: 1px solid change-alpha(--h3-title, 0.1);
+    }
+
+    code {
+      cursor: pointer;
+      background-color: var(--primary-color);
+
+      &:hover {
+        background-color: var(--primary-color-hover);
+      }
+
+      color: var(--black-text-color);
+    }
+
+    pre {
+      $code-canvas: rgba(175, 184, 193, 0.2);
+      background-color: $code-canvas;
+
+      margin-top: $normal;
+
+      code {
+        background-color: transparent;
+        color: var(--background-contrast-color);
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    .tldr-steps {
+      code {
+        background-color: $grey-200;
+      }
+    }
+
+    hr {
+      margin-top: $large;
+      margin-bottom: $large;
+    }
+  }
+
+  .theme-radio-group {
+    label,
+    input {
+      cursor: pointer;
+    }
+
+    accent-color: var(--primary-color);
+    margin-top: $normal;
+    gap: $small;
+
+    input {
+      margin-right: $tiny;
+    }
+  }
+
+  .darken-lighten-markdown {
+    li {
+      font-size: 150%;
+
+      &:nth-child(1) {
+        color: lighten-theme-color(--primary-color, 30%);
+      }
+      &:nth-child(2) {
+        color: lighten-theme-color(--primary-color, 15%);
+      }
+      &:nth-child(3) {
+        color: var(--primary-color);
+      }
+      &:nth-child(4) {
+        color: darken-theme-color(--primary-color, 15%);
+      }
+      &:nth-child(5) {
+        color: darken-theme-color(--primary-color, 30%);
+      }
+    }
+  }
+
+  .color-harmonies-markdown {
+    h4 {
+      $colors-harmonies: --primary-color, --primary-color-complementary,
+        --primary-color-split-complementary,
+        --primary-color-split-complementary-split-complementary-second-hue,
+        --primary-color-split-complementary-split-complementary-third-hue,
+        --primary-color-triadic, --primary-color-triadic-triadic-second-hue,
+        --primary-color-triadic-triadic-third-hue, --primary-color-tetradic,
+        --primary-color-tetradic-tetradic-second-hue,
+        --primary-color-tetradic-tetradic-third-hue,
+        --primary-color-tetradic-tetradic-fourth-hue, --primary-color-analogous,
+        --primary-color-analogous-analogous-second-hue,
+        --primary-color-analogous-analogous-third-hue,
+        --primary-color-analogous-analogous-fourth-hue,
+        --primary-color-analogous-analogous-fifth-hue;
+
+      @each $color-harmony in $colors-harmonies {
+        &:nth-of-type(#{index($colors-harmonies, $color-harmony)}) {
+          color: var(#{$color-harmony});
+        }
+      }
+    }
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+
+  .radio-group {
+    gap: 20px;
+    margin: 20px;
+
+    label {
+      cursor: pointer;
+      color: var(--background-contrast-color);
+    }
+  }
+
+  h1 {
+    color: var(--primary-color);
+
+    &:hover {
+      color: var(--primary-color-hover);
+      cursor: pointer;
+    }
+  }
+
+  button {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 6px;
+  }
+
+  .card {
+    @extend %theme-presenter-container;
+
+    border: 1px solid change-lightness(--background-contrast-color, 60%);
+  }
+}

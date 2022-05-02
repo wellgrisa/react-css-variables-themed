@@ -1,0 +1,41 @@
+@import "~@tame-your-theme/scss";
+@import "../scss/guidelines.scss";
+@import "../scss/palette.scss";
+
+:root {
+  @include create-theme-color(--themed-div-background-color, #ffffff);
+  @include create-theme-color(
+    --themed-div-background-contrast-color,
+    $grey-900
+  );
+  @include create-theme-color-complementary(
+    --themed-div-primary-color,
+    #ffa500
+  );
+}
+
+.themed {
+  text-align: center;
+  background-color: var(--themed-div-background-color);
+  color: var(--themed-div-background-contrast-color);
+
+  h1 {
+    color: var(--themed-div-primary-color);
+    border-bottom: none;
+  }
+
+  label {
+    cursor: pointer;
+
+    input {
+      margin-right: $tiny;
+      margin-top: $normal;
+    }
+  }
+
+  border: 1px solid
+    change-lightness(--themed-div-background-contrast-color, 80%);
+  border-radius: $small;
+  padding: $small;
+  margin-top: $normal;
+}
