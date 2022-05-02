@@ -9,7 +9,7 @@ To achieve that, this lib is split in two packages:
 
 The idea of this document is to show how to setup and change themes in run time, but each package can be used independently. 
 
-If you do not need to change in run time, you can just use the [\`@tame-your-theme/scss\`](https://www.npmjs.com/package/@tame-your-theme/scss) to create your variables and play with its colors easily.
+If you don't need to change in run time, you can just use the [\`@tame-your-theme/scss\`](https://www.npmjs.com/package/@tame-your-theme/scss) to create your variables and play with its colors easily.
 
 ## Installation
 
