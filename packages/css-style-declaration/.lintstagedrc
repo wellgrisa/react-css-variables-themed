@@ -1,6 +1,0 @@
-{
-  "*.ts?(x)": [
-    "yarn test **/?(*.)+(spec|test).[tj]s?(x)",
-    "yarn istanbul-badges-readme"
-  ]
-}
