@@ -1,11 +1,13 @@
 on:
   push:
+    branches: [main]
     paths: ["packages/gh-page/**/*"]
 
 jobs:
   deploy-gh-page:
     name: Deploying
     runs-on: ubuntu-latest
+    if: github.ref_name == 'main'
     steps:
       - uses: actions/checkout@v3
 
