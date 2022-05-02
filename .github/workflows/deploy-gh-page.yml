@@ -9,15 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: "Deploy"
-        env:
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          repository: ${{ github.repository }}
+      - name: Install and Build 🔧
         run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor}}@users.noreply.github.com"
           cd packages/gh-page
+          npm ci
           yarn
-          yarn deploy
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: build
+          ssh-key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
