@@ -264,3 +264,5 @@ h4 {
   }
 }
 ```
+
+Test Publish from lerna in actions

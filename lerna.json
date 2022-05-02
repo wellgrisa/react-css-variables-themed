@@ -3,7 +3,7 @@
   "npmClient": "yarn",
   "command": {
     "version": {
-      "allowBranch": "main"
+      "allowBranch": "publish-from-actions"
     }
   },
   "version": "independent"
