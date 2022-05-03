@@ -31,7 +31,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "${{ github.actor }}"
-          yarn lerna version --conventional-commits --conventional-graduate --yes
+          npx lerna version --conventional-commits --conventional-graduate --yes
 
   publish:
     name: Publish
@@ -51,4 +51,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.TYT_PT }}
         run: |
           git config user.name "${{ github.actor }}"
+          yarn install --frozen-lockfile
+          yarn bootstrap
           yarn lerna publish from-git --yes --no-verify-access
