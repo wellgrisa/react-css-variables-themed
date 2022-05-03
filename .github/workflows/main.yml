@@ -51,4 +51,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.TYT_PT }}
         run: |
           git config user.name "${{ github.actor }}"
-          npx lerna publish from-git --yes --no-verify-access
+          npx lerna publish from-git --yes --no-verify-access --ignore-scripts
