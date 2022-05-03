@@ -40,6 +40,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           yarn
+          yarn bootstrap
           yarn lerna publish from-git --yes --no-verify-access
 
   # version:
