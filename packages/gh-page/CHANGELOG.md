@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/wellgrisa/tame-your-theme/compare/gh-page@0.1.5...gh-page@0.1.6) (2022-05-03)
+
+**Note:** Version bump only for package gh-page
+
+
+
+
+
 ## [0.1.6-beta.8](https://github.com/wellgrisa/tame-your-theme/compare/gh-page@0.1.6-beta.7...gh-page@0.1.6-beta.8) (2022-05-03)
 
 **Note:** Version bump only for package gh-page
