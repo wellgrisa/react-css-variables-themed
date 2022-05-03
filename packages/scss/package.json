@@ -1,6 +1,6 @@
 {
   "name": "@tame-your-theme/scss",
-  "version": "0.1.3-beta.4",
+  "version": "0.1.3-beta.5",
   "description": "scss helper functions to create themed css variable colors, themed color harmonies and to tame your theme",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
