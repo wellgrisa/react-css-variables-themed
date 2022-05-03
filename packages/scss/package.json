@@ -9,7 +9,7 @@
     "build": "yarn clean && tsc",
     "clean": "rm -rf lib",
     "test": "jest",
-    "prepublish": "yarn build",
+    "prepublish": "yarn && yarn build",
     "test-watch": "jest --watchAll"
   },
   "publishConfig": {
