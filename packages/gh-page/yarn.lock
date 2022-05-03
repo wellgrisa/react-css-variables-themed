@@ -1628,6 +1628,11 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tame-your-theme/scss@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@tame-your-theme/scss/-/scss-0.1.2.tgz#c3bb9f8ad0a6b09d63b8b5e1e2efa41d65875ba3"
+  integrity sha512-TIr3SVzzvV+KGPTed/buNXBBvqVPEvdU5VvuNzNoSwQV6oswWgaHcBQzf0UFdmDtw7J4zbroWfQfTCmw+nMy3g==
+
 "@testing-library/dom@^8.0.0":
   version "8.13.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.13.0.tgz#bc00bdd64c7d8b40841e27a70211399ad3af46f5"
