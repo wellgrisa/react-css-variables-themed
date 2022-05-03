@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3-beta.6](https://github.com/wellgrisa/tame-your-theme/compare/@tame-your-theme/scss@0.1.2...@tame-your-theme/scss@0.1.3-beta.6) (2022-05-03)
+
+**Note:** Version bump only for package @tame-your-theme/scss
+
+
+
+
+
 ## [0.1.3-beta.5](https://github.com/wellgrisa/tame-your-theme/compare/@tame-your-theme/scss@0.1.3-beta.5...@tame-your-theme/scss@0.1.3-beta.5) (2022-05-03)
 
 **Note:** Version bump only for package @tame-your-theme/scss

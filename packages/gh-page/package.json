@@ -1,6 +1,6 @@
 {
   "name": "gh-page",
-  "version": "0.1.6-beta.6",
+  "version": "0.1.6-beta.7",
   "private": true,
   "homepage": ".",
   "dependencies": {
