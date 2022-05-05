@@ -6,16 +6,21 @@
 
 For the [full and interactive documentation go here](https://wellgrisa.github.io/tame-your-theme/).
 
-The main idea of this lib is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors and the [CSS Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model) to change the css variables in runtime.
+The main aim of the [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) is to help creating themes by using [CSS custom variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#Inheritance_of_CSS_Variables) alongside with [HSL](https://vanseodesign.com/web-design/hue-saturation-and-lightness/) colors.
 
-To achieve that, this lib is split in two packages:
+Besides creating the css variables with hsl colors, this lib also has some functions to create colors harmonies (which are best seen in [here](https://wellgrisa.github.io/tame-your-theme/)):
 
-- [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) - scss helper functions to create themed css variable colors, themed color harmonies
-- [`@tame-your-theme/css-style-declaration`](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration) - native css style declarations api helper to change theme in run time
+- @create-theme-color-complementary
+- @create-theme-color-split-complementary
+- @create-theme-color-triadic
+- @create-theme-color-tetradic
+- @create-theme-color-analogous
 
-Each package can be used independently.
+This lib is totally usable on its own, the idea is to have a helper to create css variables colors which are much easier to manipulate.
 
-If you don't need to change in run time, you can just use the [`@tame-your-theme/scss`](https://www.npmjs.com/package/@tame-your-theme/scss) to create your variables and play with its colors easily.
+If you have to change themes in runtime either by giving options of dark and white themes or by having themes loaded asynchronously you can use this lib alongside with [`@tame-your-theme/css-style-declaration`](https://www.npmjs.com/package/@tame-your-theme/css-style-declaration).
+
+The following installation is covering both libs.
 
 # Installation
 
@@ -61,12 +66,24 @@ Colors come in different ways from different designers and companies, sometimes 
 
 In short HSL is easier to read, modify, improvise and this lib is willing to show how to achieve it.
 
+You might be thinking of why to recreate the methods darken, lighten and change alpha once scss already has it. The reason is that these mixins don't work with css variables, which makes difficult to change and manipulate them in runtime. By using the functions of this lib it's possible to have the colors changed on the go as you can see in the sections change-alpha and darken/lighten colors.
+
+As an example, if you try to use the function lighten from scss you might see the following error:
+
+```
+color: lighten(var(--primary-color), 30%);
+```
+
+```
+SassError: $color: var(--primary-color) is not a color.
+```
+
 ## @mixin create-theme-color
 
 The main function is the **create-theme-color**. Here is an example of how to create a variable called primary-color with the yellow color used in the white theme.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   // $color-name: --primary-color, $color-value: #f6a820, $hover-opacity: 0.5
@@ -95,7 +112,7 @@ This functions changes the uses the hsla function to change the alpha of the giv
 This is common to use when making light borders in boxes for example.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 h3 {
   // $color-name: --h3-title, $opacity: 0.1
@@ -106,7 +123,7 @@ h3 {
 ## @function darken-theme-color and @function lighten-theme-color
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 li {
   &:nth-child(1) {
@@ -132,7 +149,7 @@ li {
 This function creates the color given and also a complementary one to it.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-complementary(--primary-color, #f6a820);
@@ -154,7 +171,7 @@ h4 {
 This function creates the color given and also a complementary one to it.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-split-complementary(--primary-color, #f6a820);
@@ -180,7 +197,7 @@ h4 {
 This function creates the color given and two other colors, **#{color}-triadic-second-hue** and **#{color}-triadic-third-hue**.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-triadic(--primary-color, #f6a820);
@@ -206,7 +223,7 @@ h4 {
 This function creates the color given and three other colors, **#{color-name}-tetradic-second-hue**, **#{color-name}-tetradic-third-hue** and **#{color}-tetradic-fourth-hue**.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-tetradic(--primary-color, #f6a820);
@@ -236,7 +253,7 @@ h4 {
 This function creates the color given and four others, creating an analogous color harmony, **#{color-name}-analogous-second-hue**, **#{color-name}-analogous-third-hue**, **#{color-name}-analogous-fourth-hue** and **#{color}-analogous-fifth-hue**.
 
 ```scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-analogous(--primary-color, #f6a820);
