@@ -72,11 +72,11 @@ export default function App() {
       <Markdown>{overviewMarkdown}</Markdown>
       <ThemedDiv />
       <Markdown>{tldrMarkdown}</Markdown>
-      <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
-      <CssStyleDeclarationIndependently />
       <Markdown>{scssMarkdown}</Markdown>
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
+      <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
+      <CssStyleDeclarationIndependently />
     </div>
   );
 }

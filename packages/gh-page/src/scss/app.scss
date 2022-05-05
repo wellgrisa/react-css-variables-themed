@@ -8,6 +8,7 @@
   @include create-theme-color(--markdown-keyword, #ff00ff);
   @include create-theme-color(--markdown-comment, #3cb371);
   @include create-theme-color(--h3-title, #ff4500);
+  @include create-theme-color(--error, #e36049);
   @include create-theme-color(--markdown-string, #d2691e);
   @include create-theme-color(--markdown-attribute, #6495ed);
   @include create-theme-color(--markdown-function, #ff8c00);
@@ -70,6 +71,16 @@ body {
     .hljs:not(.language-sql) {
       .hljs-keyword {
         color: var(--markdown-keyword);
+      }
+    }
+
+    .hljs {
+      &.language-csharp {
+        color: var(--error);
+
+        .hljs-keyword {
+          color: var(--error);
+        }
       }
     }
 
