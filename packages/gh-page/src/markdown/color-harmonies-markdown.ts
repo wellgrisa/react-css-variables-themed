@@ -7,7 +7,7 @@ This function creates the color given and also a complementary one to it.
 #### var(--primary-color-complementary)
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-complementary(--primary-color, #f6a820);
@@ -33,7 +33,7 @@ This function creates the color given and also a complementary one to it.
 #### var(--primary-color-split-complementary-third-hue)
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-split-complementary(--primary-color, #f6a820);
@@ -63,7 +63,7 @@ This function creates the color given and two other colors, **#{color}-triadic-s
 #### var(--primary-color-triadic-second-hue)
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-triadic(--primary-color, #f6a820);
@@ -94,7 +94,7 @@ This function creates the color given and three other colors, **#{color-name}-te
 #### var(--primary-color-tetradic-fourth-hue)
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-tetradic(--primary-color, #f6a820);
@@ -130,7 +130,7 @@ This function creates the color given and four others, creating an analogous col
 #### var(--primary-color-analogous-fifth-hue)
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 :root {
   @include create-theme-color-analogous(--primary-color, #f6a820);

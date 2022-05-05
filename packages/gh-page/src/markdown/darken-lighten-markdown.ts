@@ -8,7 +8,7 @@ export const darkenLightenMarkdown = `
 * Darker
 
 \`\`\`scss
-@import "~tame-your-theme-scss";
+@import "~@tame-your-theme/scss";
 
 li {
   &:nth-child(1) {
