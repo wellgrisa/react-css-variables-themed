@@ -14,13 +14,13 @@
   @include create-theme-color(--markdown-function, #ff8c00);
   @include create-theme-color(--background-color, #ffffff);
   @include create-theme-color(--background-contrast-color, $grey-900);
-  @include create-theme-color-complementary(--primary-color, #ffa500);
-  @include create-theme-color-triadic(--primary-color-triadic, #ffa500);
-  @include create-theme-color-tetradic(--primary-color-tetradic, #ffa500);
-  @include create-theme-color-analogous(--primary-color-analogous, #ffa500);
+  @include create-theme-color-complementary(--primary-color, $yellow);
+  @include create-theme-color-triadic(--primary-color-triadic, $yellow);
+  @include create-theme-color-tetradic(--primary-color-tetradic, $yellow);
+  @include create-theme-color-analogous(--primary-color-analogous, $yellow);
   @include create-theme-color-split-complementary(
     --primary-color-split-complementary,
-    #ffa500
+    $yellow
   );
   @include create-theme-color-complementary(
     --complementary-primary-color,

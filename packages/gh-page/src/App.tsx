@@ -7,13 +7,14 @@ import { Row } from 'react-display-flex'
 
 import { setTheme } from '@tame-your-theme/css-style-declaration'
 
+import { CssStyleDeclarationIndependently } from './CssStyleDeclarationIndependently/CssStyleDeclarationIndependently'
 import { cssStyleDeclarationMarkdown } from './markdown/css-style-declaration-markdown'
 import { ColorHarmoniesMarkdown, DarkenLightenMarkdown, Markdown } from './markdown/Markdown'
 import { scssMarkdown } from './markdown/scss-markdown'
 import { overviewMarkdown, tldrMarkdown } from './markdown/tlrl-markdown'
 import { themes, whiteTheme, ThemesHarmonies } from './theme'
-import { CssStyleDeclarationIndependently } from './ThemedDiv/CssStyleDeclarationIndependently'
 import { ThemedDiv } from './ThemedDiv/ThemedDiv'
+import { ThirdPartyLibraries } from './ThirdPartyLibraries/ThirdPartyLibraries'
 
 const getHueSaturationAndLightness = (value: string) => {
   const [hue, saturation, lightness] = hexToHsl(value);
@@ -75,6 +76,7 @@ export default function App() {
       <Markdown>{scssMarkdown}</Markdown>
       <DarkenLightenMarkdown />
       <ColorHarmoniesMarkdown />
+      <ThirdPartyLibraries />
       <Markdown>{cssStyleDeclarationMarkdown}</Markdown>
       <CssStyleDeclarationIndependently />
     </div>

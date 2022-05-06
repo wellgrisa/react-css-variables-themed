@@ -1,0 +1,83 @@
+@import "~@tame-your-theme/scss";
+
+@import "./change-selector-colors.scss";
+@import "./change-datepicker-colors.scss";
+
+@import "../scss/guidelines.scss";
+@import "../scss/palette.scss";
+
+.real-world-examples.themed {
+  padding: 0;
+
+  section {
+    padding: $large $small;
+    flex: 1;
+
+    &[data-theme="dark"] {
+      border-top-left-radius: $small;
+      border-bottom-left-radius: $small;
+      background-color: $background-dark-color;
+      color: $background-dark-contrast-color;
+
+      .tame-your-theme-select {
+        @include create-theme-color(
+          --react-select-background-color,
+          $background-white-color
+        );
+        @include create-theme-color(
+          --react-select-background-contrast-color,
+          $background-white-contrast-color
+        );
+
+        .my-react-select {
+          @include change-select-colors();
+        }
+      }
+
+      .tame-your-theme-datepicker-wrapper {
+        @include change-datepicker-colors();
+      }
+    }
+
+    &[data-theme="white"] {
+      border-top-right-radius: $small;
+      border-bottom-right-radius: $small;
+      background-color: $background-white-color;
+      color: $background-white-contrast-color;
+
+      .tame-your-theme-select {
+        @include create-theme-color(--react-select-primary-color, $pink);
+
+        .my-react-select {
+          @include change-select-colors();
+        }
+      }
+
+      .tame-your-theme-datepicker-wrapper {
+        @include create-theme-color(
+          --datepicker-background-color,
+          $background-white-color
+        );
+        @include create-theme-color(
+          --datepicker-background-contrast-color,
+          $background-white-contrast-color
+        );
+        @include create-theme-color(--datepicker-primary-color, $pink);
+
+        @include change-datepicker-colors();
+      }
+    }
+
+    .tame-your-theme-datepicker-wrapper {
+      margin-top: $normal;
+      margin-bottom: $normal;
+
+      p {
+        text-align: left;
+        margin: 0;
+      }
+
+      gap: $small;
+    }
+  }
+}
