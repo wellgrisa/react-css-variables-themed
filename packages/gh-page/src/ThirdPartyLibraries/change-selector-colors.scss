@@ -1,0 +1,81 @@
+@import "@tame-your-theme/scss";
+
+@import "../scss/guidelines.scss";
+@import "../scss/palette.scss";
+
+:root {
+  @include create-theme-color(--react-select-primary-color, $yellow);
+  @include create-theme-color(
+    --react-select-primary-contrast-color,
+    $yellow-contrast-color
+  );
+  @include create-theme-color(
+    --react-select-background-color,
+    $background-dark-color
+  );
+  @include create-theme-color(
+    --react-select-background-contrast-color,
+    $background-dark-contrast-color
+  );
+}
+
+@mixin change-select-colors(
+  $background-color-name: --react-select-background-color,
+  $background-contrast-color-name: --react-select-background-contrast-color,
+  $primary-color-name: --react-select-primary-color,
+  $primary-contrast-color-name: --react-select-primary-contrast-color
+) {
+  &__control {
+    background-color: var(#{$background-color-name});
+    color: var(#{$background-contrast-color-name});
+    border-color: lighten-theme-color(#{$background-color-name}, 10%);
+
+    &--is-focused {
+      border-color: var(#{$primary-color-name});
+      box-shadow: 0 0 0 1px var(#{$primary-color-name});
+
+      .my-react-select__single-value {
+        color: var(#{$background-contrast-color-name});
+      }
+
+      &:hover {
+        border-color: lighten-theme-color(#{$primary-color-name}, 10%);
+      }
+    }
+  }
+
+  &__indicator svg {
+    fill: var(#{$background-contrast-color-name});
+  }
+
+  &__loading-indicator {
+    color: var(#{$primary-color-name});
+  }
+
+  &__input-container,
+  &__placeholder,
+  &__single-value {
+    color: var(#{$background-contrast-color-name});
+  }
+
+  &__menu {
+    background-color: lighten-theme-color(#{$background-color-name}, 5%);
+    color: change-alpha(#{$background-contrast-color-name}, 0.4);
+  }
+
+  &__option {
+    cursor: pointer;
+
+    &:active,
+    &--is-focused {
+      background-color: lighten-theme-color(#{$primary-color-name}, 10%);
+      color: var(#{$primary-contrast-color-name});
+    }
+
+    &--is-selected {
+      background-color: var(#{$primary-color-name});
+      color: var(#{$primary-contrast-color-name});
+      font-weight: bold;
+    }
+  }
+}
