@@ -42,8 +42,20 @@ Disclaimer, if you want to have some starting guide, check the files used for th
 }
 
 section {
+  .my-react-select {
+    // this is a mixin which you can check in the file mentioned before 
+    // it basically sets the --react-select css variables accordingly
+    // it doesn't really matter where you put this, since it's within your
+    // app scss structure, e.g.: within your main application className
+    @include change-select-colors();
+  }
+
   &[data-theme="dark"] {
     .tame-your-theme-select {
+      // to change the colors of the select, you just need to create the 
+      // color within the css selector, in this case [data-theme="dark"] selector
+      // the css variable will do the rest, once you have previously set up the 
+      // colors of your select by using css variables
       @include create-theme-color(
         --react-select-background-color,
         #ffffff
@@ -52,24 +64,12 @@ section {
         --react-select-background-contrast-color,
         #212121
       );
-
-      .my-react-select {
-        // this is a mixin which you can check in the file mentioned before 
-        // it basically sets the --react-select css variables accordingly
-        @include change-select-colors();
-      }
     }
   }
 
   &[data-theme="white"] {
     .tame-your-theme-select {
       @include create-theme-color(--react-select-primary-color, $pink);
-
-      .my-react-select {
-        // as the white theme only changes the primary-color, 
-        // it's not necessary to pass the other properties
-        @include change-select-colors();
-      }
     }
   }
 }
@@ -78,6 +78,17 @@ section {
 \`\`\`ts
 export const ThirdPartyLibraries = () => (
   <Row className="themed real-world-examples">
+    <section data-theme="white">
+      <ReactSelect
+        className="tame-your-theme-select"
+        classNamePrefix="my-react-select"
+        options={options}
+      />
+      <Column className="tame-your-theme-datepicker-wrapper">
+        <p>Select a date</p>
+        <ReactDatePicker dateFormat="P" todayButton="Today" />
+      </Column>
+    </section>
     <section data-theme="dark">
       <Column>
         <ReactSelect
@@ -91,7 +102,7 @@ export const ThirdPartyLibraries = () => (
         </Column>
       </Column>
     </section>
-    <section data-theme="white">
+    <section className="imagine-i-am-a-form">
       <ReactSelect
         className="tame-your-theme-select"
         classNamePrefix="my-react-select"
@@ -105,4 +116,20 @@ export const ThirdPartyLibraries = () => (
   </Row>
 )
 \`\`\`
+
+The full style code from the components below can be seen [here](https://github.com/wellgrisa/tame-your-theme/blob/main/packages/gh-page/src/ThirdPartyLibraries/third-party-libraries.scss). Not that the main functions which are responsible to set the colors of the components are only called once within the main section \`.real-world-examples.themed\` class.
+
+\`\`\`scss
+.real-world-examples.themed {
+  .my-react-select {
+    @include change-select-colors();
+  }
+
+  @include change-datepicker-colors();
+
+  // the colors are being set within the data-theme attributes selectors
+}
+\`\`\`
+
+You might be wondering why you would change specifically a section with different colors than your "default select colors". Well, imagine a situation where your website has a specific form with different colors than the rest of your theme, you can easily achieve that as seen in the third column.
 `;

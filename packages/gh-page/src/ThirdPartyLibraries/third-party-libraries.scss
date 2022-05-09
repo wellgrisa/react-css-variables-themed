@@ -7,15 +7,41 @@
 @import "../scss/palette.scss";
 
 .real-world-examples.themed {
+  .my-react-select {
+    @include change-select-colors();
+  }
+
+  @include change-datepicker-colors();
+
   padding: 0;
 
   section {
     padding: $large $small;
     flex: 1;
 
+    &.imagine-i-am-a-form {
+      border-top-right-radius: $small;
+      border-bottom-right-radius: $small;
+      background-color: #1e90ff;
+
+      .tame-your-theme-select {
+        @include create-theme-color(--react-select-background-color, #90ff1e);
+        @include create-theme-color(--react-select-primary-color, #ff1e90);
+        @include create-theme-color(
+          --react-select-background-contrast-color,
+          $background-white-contrast-color
+        );
+      }
+
+      @include create-theme-color(--datepicker-background-color, #90ff1e);
+      @include create-theme-color(--datepicker-primary-color, #ff1e90);
+      @include create-theme-color(
+        --datepicker-background-contrast-color,
+        $background-white-contrast-color
+      );
+    }
+
     &[data-theme="dark"] {
-      border-top-left-radius: $small;
-      border-bottom-left-radius: $small;
       background-color: $background-dark-color;
       color: $background-dark-contrast-color;
 
@@ -28,29 +54,17 @@
           --react-select-background-contrast-color,
           $background-white-contrast-color
         );
-
-        .my-react-select {
-          @include change-select-colors();
-        }
-      }
-
-      .tame-your-theme-datepicker-wrapper {
-        @include change-datepicker-colors();
       }
     }
 
     &[data-theme="white"] {
-      border-top-right-radius: $small;
-      border-bottom-right-radius: $small;
+      border-top-left-radius: $small;
+      border-bottom-left-radius: $small;
       background-color: $background-white-color;
       color: $background-white-contrast-color;
 
       .tame-your-theme-select {
         @include create-theme-color(--react-select-primary-color, $pink);
-
-        .my-react-select {
-          @include change-select-colors();
-        }
       }
 
       .tame-your-theme-datepicker-wrapper {
@@ -63,8 +77,6 @@
           $background-white-contrast-color
         );
         @include create-theme-color(--datepicker-primary-color, $pink);
-
-        @include change-datepicker-colors();
       }
     }
 
