@@ -330,33 +330,47 @@ Without further ado, below is possible to the see the code responsible to change
 }
 
 section {
+  .my-react-select {
+    // this is a mixin which you can check in the file mentioned before
+    // it basically sets the --react-select css variables accordingly
+    // it doesn't really matter where you put this, since it's within your
+    // app scss structure, e.g.: within your main application className
+    @include change-select-colors();
+  }
+
   &[data-theme="dark"] {
     .tame-your-theme-select {
+      // to change the colors of the select, you just need to create the
+      // color within the css selector, in this case [data-theme="dark"] selector
+      // the css variable will do the rest, once you have previously set up the
+      // colors of your select by using css variables
       @include create-theme-color(--react-select-background-color, #ffffff);
       @include create-theme-color(
         --react-select-background-contrast-color,
         #212121
       );
-
-      .my-react-select {
-        // this is a mixin which you can check in the file mentioned before
-        // it basically sets the --react-select css variables accordingly
-        @include change-select-colors();
-      }
     }
   }
 
   &[data-theme="white"] {
     .tame-your-theme-select {
       @include create-theme-color(--react-select-primary-color, $pink);
-
-      .my-react-select {
-        // as the white theme only changes the primary-color,
-        // it's not necessary to pass the other properties
-        @include change-select-colors();
-      }
     }
   }
+}
+```
+
+The full style code from the third party components can be seen [here](https://github.com/wellgrisa/tame-your-theme/blob/main/packages/gh-page/src/ThirdPartyLibraries/third-party-libraries.scss). Not that the main functions which are responsible to set the colors of the components are only called once within the main section \`.real-world-examples.themed\` class.
+
+```scss
+.real-world-examples.themed {
+  .my-react-select {
+    @include change-select-colors();
+  }
+
+  @include change-datepicker-colors();
+
+  // the colors are being set within the data-theme attributes selectors
 }
 ```
 
