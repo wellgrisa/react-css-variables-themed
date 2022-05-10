@@ -1,0 +1,123 @@
+@import "create-theme-color-structure.scss";
+@import "create-theme-color-hsl.scss";
+
+@mixin create-theme-color-complementary(
+  $color-name,
+  $color-value,
+  $hover: $default-hover
+) {
+  @include create-theme-color($color-name, $color-value, $hover);
+
+  $complementary-factor: 180deg;
+
+  @include create-theme-color-structure(
+    #{$color-name}-complementary,
+    $hue: calc(var(#{$color-name + "-h"}) + $complementary-factor),
+    $saturation: var(#{$color-name + "-s"}),
+    $lightness: var(#{$color-name + "-l"})
+  );
+}
+
+@mixin create-theme-color-triadic(
+  $color-name,
+  $color-value,
+  $hover: $default-hover,
+  $color-second-hue-name: null,
+  $color-third-hue-name: null
+) {
+  $triadic-factors: (
+    $color-second-hue-name or #{$color-name}-triadic-second-hue: 120deg,
+    $color-third-hue-name or #{$color-name}-triadic-third-hue: 240deg
+  );
+
+  @include create-theme-color($color-name, $color-value, $hover);
+  @include create-theme-by-factors($color-name, $triadic-factors);
+}
+
+@mixin create-theme-color-tetradic(
+  $color-name,
+  $color-value,
+  $hover: $default-hover,
+  $color-second-hue-name: null,
+  $color-third-hue-name: null,
+  $color-fourth-hue-name: null
+) {
+  $tetradic-factors: (
+    $color-second-hue-name or #{$color-name}-tetradic-second-hue: 30deg,
+    $color-third-hue-name or #{$color-name}-tetradic-third-hue: 180deg,
+    $color-fourth-hue-name or #{$color-name}-tetradic-fourth-hue: 210deg
+  );
+
+  @include create-theme-color($color-name, $color-value, $hover);
+  @include create-theme-by-factors($color-name, $tetradic-factors);
+}
+
+@mixin create-theme-color-analogous(
+  $color-name,
+  $color-value,
+  $hover: $default-hover,
+  $color-second-hue-name: null,
+  $color-third-hue-name: null,
+  $color-fourth-hue-name: null,
+  $color-fifth-hue-name: null
+) {
+  $analogous-factors: (
+    $color-second-hue-name or #{$color-name}-analogous-second-hue: -60deg,
+    $color-third-hue-name or #{$color-name}-analogous-third-hue: -30deg,
+    $color-fourth-hue-name or #{$color-name}-analogous-fourth-hue: 30deg,
+    $color-fifth-hue-name or #{$color-name}-analogous-fifth-hue: 60deg
+  );
+
+  @include create-theme-color($color-name, $color-value, $hover);
+  @include create-theme-by-factors($color-name, $analogous-factors);
+}
+
+@mixin create-theme-color-split-complementary(
+  $color-name,
+  $color-value,
+  $hover: $default-hover,
+  $color-second-hue-name: null,
+  $color-third-hue-name: null
+) {
+  $split-complementary-factors: (
+    $color-second-hue-name or #{$color-name}-split-complementary-second-hue: -150deg,
+    $color-third-hue-name or #{$color-name}-split-complementary-third-hue: 150deg
+  );
+
+  @include create-theme-color($color-name, $color-value, $hover);
+  @include create-theme-by-factors($color-name, $split-complementary-factors);
+}
+
+@mixin create-theme-color-structure(
+  $color-name,
+  $hue,
+  $saturation,
+  $lightness,
+  $hover: $default-hover
+) {
+  #{$color-name}-h: $hue;
+  #{$color-name}-s: $saturation;
+  #{$color-name}-l: $lightness;
+  #{$color-name}: hsl(
+    var(#{$color-name + "-h"}),
+    var(#{$color-name + "-s"}),
+    var(#{$color-name + "-l"})
+  );
+  #{$color-name}-hover: hsla(
+    var(#{$color-name + "-h"}),
+    var(#{$color-name + "-s"}),
+    var(#{$color-name + "-l"}),
+    $hover
+  );
+}
+
+@mixin create-theme-by-factors($color-name, $factors) {
+  @each $name, $factor in $factors {
+    @include create-theme-color-structure(
+      $name,
+      $hue: calc(var(#{$color-name + "-h"}) + $factor),
+      $saturation: var(#{$color-name + "-s"}),
+      $lightness: var(#{$color-name + "-l"})
+    );
+  }
+}
