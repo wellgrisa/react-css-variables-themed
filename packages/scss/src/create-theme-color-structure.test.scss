@@ -1,0 +1,41 @@
+@import "true";
+@import "create-theme-color-structure.scss";
+
+$mocked-color-name: "mocked-name";
+$mocked-color-value: #fff;
+$mocked-default-hover: 0.5;
+
+@include describe("@tame-your-theme/scss - create theme color structure") {
+  @include it(
+    "create-theme-color-structure() - creates a theme variable for hue, saturation, lightness and hover"
+  ) {
+    @include assert {
+      @include output {
+        @include create-theme-color-structure(
+          $mocked-color-name,
+          $hue: hue($mocked-color-value),
+          $saturation: saturation($mocked-color-value),
+          $lightness: lightness($mocked-color-value),
+          $hover: $mocked-default-hover
+        );
+      }
+
+      @include expect {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}-s: 0%;
+        #{$mocked-color-name}-l: 100%;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+        #{$mocked-color-name}-hover: hsla(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l),
+          $mocked-default-hover
+        );
+      }
+    }
+  }
+}
