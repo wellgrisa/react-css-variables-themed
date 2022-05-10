@@ -22,11 +22,17 @@
     &.imagine-i-am-a-form {
       border-top-right-radius: $small;
       border-bottom-right-radius: $small;
-      background-color: #1e90ff;
+
+      @include create-theme-color-triadic(
+        --imagine-i-am-a-form,
+        #1e90ff,
+        $color-second-hue-name: "--react-select-primary-color",
+        $color-third-hue-name: "--react-select-background-color"
+      );
+
+      background-color: var(--imagine-i-am-a-form);
 
       .tame-your-theme-select {
-        @include create-theme-color(--react-select-background-color, #90ff1e);
-        @include create-theme-color(--react-select-primary-color, #ff1e90);
         @include create-theme-color(
           --react-select-background-contrast-color,
           $background-white-contrast-color
@@ -90,6 +96,54 @@
       }
 
       gap: $small;
+    }
+  }
+
+  &.color-harmonies {
+    --color-harmony-background-color: #fff;
+
+    section {
+      background-color: var(--color-harmony-background-color);
+    }
+
+    section:nth-child(1) {
+      @include create-theme-color-analogous(
+        --color-harmony-background-color,
+        #1e90ff,
+        $color-second-hue-name: "--react-select-primary-color",
+        $color-third-hue-name: "--react-select-background-color",
+        $color-fourth-hue-name: "--react-select-primary-contrast-color",
+        $color-fifth-hue-name: "--react-select-background-contrast-color"
+      );
+
+      @include create-theme-color-analogous(
+        --color-harmony-background-color,
+        #1e90ff,
+        $color-second-hue-name: "--datepicker-primary-color",
+        $color-third-hue-name: "--datepicker-background-color",
+        $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+        $color-fifth-hue-name: "--datepicker-background-contrast-color"
+      );
+    }
+
+    section:nth-child(2) {
+      @include create-theme-color-analogous(
+        --color-harmony-background-color,
+        $yellow,
+        $color-second-hue-name: "--react-select-primary-color",
+        $color-third-hue-name: "--react-select-background-color",
+        $color-fourth-hue-name: "--react-select-primary-contrast-color",
+        $color-fifth-hue-name: "--react-select-background-contrast-color"
+      );
+
+      @include create-theme-color-analogous(
+        --color-harmony-background-color,
+        $yellow,
+        $color-second-hue-name: "--datepicker-primary-color",
+        $color-third-hue-name: "--datepicker-background-color",
+        $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+        $color-fifth-hue-name: "--datepicker-background-contrast-color"
+      );
     }
   }
 }

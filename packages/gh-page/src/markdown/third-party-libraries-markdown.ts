@@ -133,3 +133,69 @@ The full style code from the components below can be seen [here](https://github.
 
 You might be wondering why you would change specifically a section with different colors than your "default select colors". Well, imagine a situation where your website has a specific form with different colors than the rest of your theme, you can easily achieve that as seen in the third column.
 `;
+
+export const colorHarmoniesThirdPartyLibrariesMarkdown = `
+## Color Harmonies and Third Party Components
+
+Another good example of the use of this lib, is the color harmonies and the named arguments. This can be seen in the box below, where there are different react-select components built on top of the combination of:
+ - color harmonies
+ - the css variables
+ - and the named arguments from the mixins given in this lib
+
+As you can see in the example below, the \`create-theme-color-analogous\` is used alongside with each css variable name responsible to set the colors of the components.
+
+\`\`\`scss
+.color-harmonies {
+  --color-harmony-background-color: #fff;
+
+  section {
+    // this is used just to set the background of the sections
+    // accordingly to the color harmony chosen, in this case,
+    // the color harmony create-theme-color-analogous
+    background-color: var(--color-harmony-background-color);
+  }
+
+  section:nth-child(1) {
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #1e90ff,
+      $color-second-hue-name: "--react-select-primary-color",
+      $color-third-hue-name: "--react-select-background-color",
+      $color-fourth-hue-name: "--react-select-primary-contrast-color",
+      $color-fifth-hue-name: "--react-select-background-contrast-color"
+    );
+
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #1e90ff,
+      $color-second-hue-name: "--datepicker-primary-color",
+      $color-third-hue-name: "--datepicker-background-color",
+      $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+      $color-fifth-hue-name: "--datepicker-background-contrast-color"
+    );
+  }
+
+  section:nth-child(2) {
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #ffa500,
+      $color-second-hue-name: "--react-select-primary-color",
+      $color-third-hue-name: "--react-select-background-color",
+      $color-fourth-hue-name: "--react-select-primary-contrast-color",
+      $color-fifth-hue-name: "--react-select-background-contrast-color"
+    );
+
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #ffa500,
+      $color-second-hue-name: "--datepicker-primary-color",
+      $color-third-hue-name: "--datepicker-background-color",
+      $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+      $color-fifth-hue-name: "--datepicker-background-contrast-color"
+    );
+  }
+}
+\`\`\`
+
+
+`;
