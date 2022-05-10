@@ -1,0 +1,24 @@
+@import "variables";
+
+@mixin create-theme-color-structure(
+  $color-name,
+  $hue,
+  $saturation,
+  $lightness,
+  $hover: $default-hover
+) {
+  #{$color-name}-h: $hue;
+  #{$color-name}-s: $saturation;
+  #{$color-name}-l: $lightness;
+  #{$color-name}: hsl(
+    var(#{$color-name + "-h"}),
+    var(#{$color-name + "-s"}),
+    var(#{$color-name + "-l"})
+  );
+  #{$color-name}-hover: hsla(
+    var(#{$color-name + "-h"}),
+    var(#{$color-name + "-s"}),
+    var(#{$color-name + "-l"}),
+    $hover
+  );
+}
