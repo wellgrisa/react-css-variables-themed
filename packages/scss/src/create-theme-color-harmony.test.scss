@@ -1,0 +1,256 @@
+@import "true";
+@import "create-theme-color-harmony.scss";
+
+$mocked-color-name: "mocked-name";
+$mocked-color-value: #fff;
+$mocked-default-hover: 0.5;
+
+@include describe("@tame-your-theme/scss - color harmonies") {
+  @include it(
+    "create-theme-color-complementary() - creates complementary color harmony"
+  ) {
+    @include assert {
+      @include output {
+        @include create-theme-color-complementary(
+          $mocked-color-name,
+          $mocked-color-value
+        );
+      }
+
+      @include contains {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+        #{$mocked-color-name}-complementary-h: calc(
+          var(#{$mocked-color-name}-h) + 180deg
+        );
+        #{$mocked-color-name}-complementary-s: var(#{$mocked-color-name}-s);
+        #{$mocked-color-name}-complementary-l: var(#{$mocked-color-name}-l);
+        #{$mocked-color-name}-complementary: hsl(
+          var(#{$mocked-color-name}-complementary-h),
+          var(#{$mocked-color-name}-complementary-s),
+          var(#{$mocked-color-name}-complementary-l)
+        );
+      }
+    }
+  }
+
+  @include it("create-theme-color-triadic() - creates triadic color harmony") {
+    @include assert {
+      @include output {
+        @include create-theme-color-triadic(
+          $mocked-color-name,
+          $mocked-color-value
+        );
+      }
+
+      @include contains {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+
+        #{$mocked-color-name}-triadic-second-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 120deg
+        );
+        #{$mocked-color-name}-triadic-second-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-triadic-second-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-triadic-second-hue: hsl(
+          var(#{$mocked-color-name}-triadic-second-hue-h),
+          var(#{$mocked-color-name}-triadic-second-hue-s),
+          var(#{$mocked-color-name}-triadic-second-hue-l)
+        );
+
+        #{$mocked-color-name}-triadic-third-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 240deg
+        );
+        #{$mocked-color-name}-triadic-third-hue-s: var(#{$mocked-color-name}-s);
+        #{$mocked-color-name}-triadic-third-hue-l: var(#{$mocked-color-name}-l);
+        #{$mocked-color-name}-triadic-third-hue: hsl(
+          var(#{$mocked-color-name}-triadic-third-hue-h),
+          var(#{$mocked-color-name}-triadic-third-hue-s),
+          var(#{$mocked-color-name}-triadic-third-hue-l)
+        );
+      }
+    }
+  }
+
+  @include it("create-theme-color-tetradic() - creates triadic color harmony") {
+    @include assert {
+      @include output {
+        @include create-theme-color-tetradic(
+          $mocked-color-name,
+          $mocked-color-value
+        );
+      }
+
+      @include contains {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+
+        #{$mocked-color-name}-tetradic-second-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 30deg
+        );
+        #{$mocked-color-name}-tetradic-second-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-tetradic-second-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-tetradic-second-hue: hsl(
+          var(#{$mocked-color-name}-tetradic-second-hue-h),
+          var(#{$mocked-color-name}-tetradic-second-hue-s),
+          var(#{$mocked-color-name}-tetradic-second-hue-l)
+        );
+
+        #{$mocked-color-name}-tetradic-third-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 180deg
+        );
+        #{$mocked-color-name}-tetradic-third-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-tetradic-third-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-tetradic-third-hue: hsl(
+          var(#{$mocked-color-name}-tetradic-third-hue-h),
+          var(#{$mocked-color-name}-tetradic-third-hue-s),
+          var(#{$mocked-color-name}-tetradic-third-hue-l)
+        );
+
+        #{$mocked-color-name}-tetradic-fourth-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 210deg
+        );
+        #{$mocked-color-name}-tetradic-fourth-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-tetradic-fourth-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-tetradic-fourth-hue: hsl(
+          var(#{$mocked-color-name}-tetradic-fourth-hue-h),
+          var(#{$mocked-color-name}-tetradic-fourth-hue-s),
+          var(#{$mocked-color-name}-tetradic-fourth-hue-l)
+        );
+      }
+    }
+  }
+
+  @include it(
+    "create-theme-color-split-complementary() - creates split complementary harmony"
+  ) {
+    @include assert {
+      @include output {
+        @include create-theme-color-split-complementary(
+          $mocked-color-name,
+          $mocked-color-value
+        );
+      }
+
+      @include contains {
+        #{$mocked-color-name}-h: 0deg;
+        #{$mocked-color-name}: hsl(
+          var(#{$mocked-color-name}-h),
+          var(#{$mocked-color-name}-s),
+          var(#{$mocked-color-name}-l)
+        );
+
+        #{$mocked-color-name}-split-complementary-second-hue-h: calc(
+          var(#{$mocked-color-name}-h) + -150deg
+        );
+        #{$mocked-color-name}-split-complementary-second-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-split-complementary-second-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-split-complementary-second-hue: hsl(
+          var(#{$mocked-color-name}-split-complementary-second-hue-h),
+          var(#{$mocked-color-name}-split-complementary-second-hue-s),
+          var(#{$mocked-color-name}-split-complementary-second-hue-l)
+        );
+
+        #{$mocked-color-name}-split-complementary-third-hue-h: calc(
+          var(#{$mocked-color-name}-h) + 150deg
+        );
+        #{$mocked-color-name}-split-complementary-third-hue-s: var(
+          #{$mocked-color-name}-s
+        );
+        #{$mocked-color-name}-split-complementary-third-hue-l: var(
+          #{$mocked-color-name}-l
+        );
+        #{$mocked-color-name}-split-complementary-third-hue: hsl(
+          var(#{$mocked-color-name}-split-complementary-third-hue-h),
+          var(#{$mocked-color-name}-split-complementary-third-hue-s),
+          var(#{$mocked-color-name}-split-complementary-third-hue-l)
+        );
+      }
+    }
+  }
+
+  @include it("changes alpha for the color name given") {
+    $mocked-alpha-opacity: 0.7;
+
+    @include assert-equal(
+      change-alpha($mocked-color-name, $mocked-alpha-opacity),
+      hsla(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        var(#{$mocked-color-name}-l),
+        $mocked-alpha-opacity
+      )
+    );
+  }
+
+  @include it("darken-theme-color() - darken theme color") {
+    $mocked-lightness: 10%;
+
+    @include assert-equal(
+      darken-theme-color($mocked-color-name, $mocked-lightness),
+      hsl(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        calc(var(mocked-name-l) + -#{$mocked-lightness})
+      )
+    );
+  }
+
+  @include it("lighten-theme-color() - lighten theme color") {
+    $mocked-lightness: 10%;
+
+    @include assert-equal(
+      lighten-theme-color($mocked-color-name, $mocked-lightness),
+      hsl(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        calc(var(mocked-name-l) + #{$mocked-lightness})
+      )
+    );
+  }
+
+  @include it("changes lightness for the color name given") {
+    $mocked-lightness: 10%;
+
+    @include assert-equal(
+      change-lightness($mocked-color-name, $mocked-lightness),
+      hsl(
+        var(#{$mocked-color-name}-h),
+        var(#{$mocked-color-name}-s),
+        calc(var(mocked-name-l) + 10%)
+      )
+    );
+  }
+}
