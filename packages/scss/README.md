@@ -144,6 +144,18 @@ li {
 }
 ```
 
+## Color Harmonies - Overview
+
+Every mixin creates each of the colors of the harmony with the following css variables
+
+- --color-name-{harmony-position-hue}
+- --color-name-{harmony-position-hue}-h
+- --color-name-{harmony-position-hue}-s
+- --color-name-{harmony-position-hue}-l
+- --color-name-{harmony-position-hue}-hover
+
+Therefore they can be used the same way as the main \`create-theme-color\` mixin, which mean any variable can be manipulated as much as possible.
+
 ## @function create-theme-color-complementary
 
 This function creates the color given and also a complementary one to it.
@@ -403,4 +415,65 @@ export const ThirdPartyLibraries = () => (
     </section>
   </Row>
 );
+```
+
+## Color Harmonies and Third Party Components
+
+Another good example of the use of this lib, is the color harmonies and the named arguments. This can be seen in the section `Color Harmonies and Third Party Components` in [here](https://wellgrisa.github.io/tame-your-theme/), where there are different react-select components built on top of the combination of:
+
+- color harmonies
+- the css variables
+- and the named arguments from the mixins given in this lib
+
+```scss
+.color-harmonies {
+  --color-harmony-background-color: #fff;
+
+  section {
+    // this is used just to set the background of the sections
+    // accordingly to the color harmony chosen, in this case,
+    // the color harmony create-theme-color-analogous
+    background-color: var(--color-harmony-background-color);
+  }
+
+  section:nth-child(1) {
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #1e90ff,
+      $color-second-hue-name: "--react-select-primary-color",
+      $color-third-hue-name: "--react-select-background-color",
+      $color-fourth-hue-name: "--react-select-primary-contrast-color",
+      $color-fifth-hue-name: "--react-select-background-contrast-color"
+    );
+
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #1e90ff,
+      $color-second-hue-name: "--datepicker-primary-color",
+      $color-third-hue-name: "--datepicker-background-color",
+      $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+      $color-fifth-hue-name: "--datepicker-background-contrast-color"
+    );
+  }
+
+  section:nth-child(2) {
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #ffa500,
+      $color-second-hue-name: "--react-select-primary-color",
+      $color-third-hue-name: "--react-select-background-color",
+      $color-fourth-hue-name: "--react-select-primary-contrast-color",
+      $color-fifth-hue-name: "--react-select-background-contrast-color"
+    );
+
+    @include create-theme-color-analogous(
+      --color-harmony-background-color,
+      #ffa500,
+      $color-second-hue-name: "--datepicker-primary-color",
+      $color-third-hue-name: "--datepicker-background-color",
+      $color-fourth-hue-name: "--datepicker-primary-contrast-color",
+      $color-fifth-hue-name: "--datepicker-background-contrast-color"
+    );
+  }
+}
 ```

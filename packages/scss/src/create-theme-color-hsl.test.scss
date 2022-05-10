@@ -1,11 +1,11 @@
 @import "true";
-@import "./create-theme-color-hsl.scss";
+@import "create-theme-color-hsl.scss";
 
 $mocked-color-name: "mocked-name";
 $mocked-color-value: #fff;
 $mocked-default-hover: 0.5;
 
-@include describe("@tame-your-theme/scss") {
+@include describe("@tame-your-theme/scss - create color hsl") {
   @include it(
     "create-theme-color-hsl() - creates a theme variable for hue, saturation, lightness and hover"
   ) {
@@ -32,130 +32,6 @@ $mocked-default-hover: 0.5;
           var(#{$mocked-color-name}-s),
           var(#{$mocked-color-name}-l),
           $mocked-default-hover
-        );
-      }
-    }
-  }
-
-  @include it(
-    "create-theme-color-complementary() - creates complementary color harmony"
-  ) {
-    @include assert {
-      @include output {
-        @include create-theme-color-complementary(
-          $mocked-color-name,
-          $mocked-color-value
-        );
-      }
-
-      @include contains {
-        #{$mocked-color-name}-h: 0deg;
-        #{$mocked-color-name}: hsl(
-          var(#{$mocked-color-name}-h),
-          var(#{$mocked-color-name}-s),
-          var(#{$mocked-color-name}-l)
-        );
-        #{$mocked-color-name}-complementary: hsl(
-          calc(var(#{$mocked-color-name}-h) + 180deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-      }
-    }
-  }
-
-  @include it("create-theme-color-triadic() - creates triadic color harmony") {
-    @include assert {
-      @include output {
-        @include create-theme-color-triadic(
-          $mocked-color-name,
-          $mocked-color-value
-        );
-      }
-
-      @include contains {
-        #{$mocked-color-name}-h: 0deg;
-        #{$mocked-color-name}: hsl(
-          var(#{$mocked-color-name}-h),
-          var(#{$mocked-color-name}-s),
-          var(#{$mocked-color-name}-l)
-        );
-        #{$mocked-color-name}-triadic-second-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 120deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-        #{$mocked-color-name}-triadic-third-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 240deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-      }
-    }
-  }
-
-  @include it("create-theme-color-tetradic() - creates triadic color harmony") {
-    @include assert {
-      @include output {
-        @include create-theme-color-tetradic(
-          $mocked-color-name,
-          $mocked-color-value
-        );
-      }
-
-      @include contains {
-        #{$mocked-color-name}-h: 0deg;
-        #{$mocked-color-name}: hsl(
-          var(#{$mocked-color-name}-h),
-          var(#{$mocked-color-name}-s),
-          var(#{$mocked-color-name}-l)
-        );
-        #{$mocked-color-name}-tetradic-second-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 30deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-        #{$mocked-color-name}-tetradic-third-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 180deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-        #{$mocked-color-name}-tetradic-fourth-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 210deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-      }
-    }
-  }
-
-  @include it(
-    "create-theme-color-split-complementary() - creates split complementary harmony"
-  ) {
-    @include assert {
-      @include output {
-        @include create-theme-color-split-complementary(
-          $mocked-color-name,
-          $mocked-color-value
-        );
-      }
-
-      @include contains {
-        #{$mocked-color-name}-h: 0deg;
-        #{$mocked-color-name}: hsl(
-          var(#{$mocked-color-name}-h),
-          var(#{$mocked-color-name}-s),
-          var(#{$mocked-color-name}-l)
-        );
-        #{$mocked-color-name}-split-complementary-second-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + -150deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
-        );
-        #{$mocked-color-name}-split-complementary-third-hue: hsl(
-          calc(var(#{$mocked-color-name}-h) + 150deg),
-          var(#{$mocked-color-name}-s),
-          calc(var(#{$mocked-color-name}-l))
         );
       }
     }
