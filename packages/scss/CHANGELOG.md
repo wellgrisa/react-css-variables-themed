@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/wellgrisa/tame-your-theme/compare/@tame-your-theme/scss@0.1.6...@tame-your-theme/scss@0.2.0) (2022-05-10)
+
+
+### Features
+
+* **scss:** include named color harmony css variables ([c97a3ce](https://github.com/wellgrisa/tame-your-theme/commit/c97a3ce2e3f3bbc6aa883f980770780f8ea7edcb))
+
+
+
+
+
 ## [0.1.6](https://github.com/wellgrisa/tame-your-theme/compare/@tame-your-theme/scss@0.1.5...@tame-your-theme/scss@0.1.6) (2022-05-09)
 
 **Note:** Version bump only for package @tame-your-theme/scss
