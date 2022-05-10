@@ -1,4 +1,15 @@
 export const colorHarmoniesMarkdown = `
+## Color Harmonies - Overview
+
+Every mixin creates each of the colors of the harmony with the following css variables
+- --color-name-{harmony-position-hue}
+- --color-name-{harmony-position-hue}-h
+- --color-name-{harmony-position-hue}-s
+- --color-name-{harmony-position-hue}-l
+- --color-name-{harmony-position-hue}-hover
+
+Therefore they can be used the same way as the main \`create-theme-color\` mixin, which mean any variable can be manipulated as much as possible.
+
 ### @function create-theme-color-complementary
 
 This function creates the color given and also a complementary one to it.
